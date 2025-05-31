@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Línea del Tiempo - Origen</title>
+  <style>
+    :root {
+      --rojo: #D9042B;
+      --vino: #730220;
+      --azul: #023373;
+      --amarillo: #F2B807;
+      --naranja: #D97904;
+      --blanco: #fff;
+      --gris-claro: #f2f2f2;
+      --sombra: rgba(0, 0, 0, 0.15);
+    }
+    body {
+      background-color: var(--blanco);
+      color: var(--azul);
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: linear-gradient(90deg, var(--azul), var(--vino));
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 4px 12px var(--sombra);
+    }
+    header img {
+      height: 60px;
+    }
+    header h1 {
+      flex-grow: 1;
+      text-align: center;
+      font-size: 2.2em;
+      color: var(--blanco);
+      text-shadow: 1px 1px 2px var(--vino);
+    }
+    .main-nav {
+      background-color: var(--naranja);
+      padding: 12px 20px;
+      box-shadow: 0 4px 8px var(--sombra);
+    }
+    .main-nav ul {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .main-nav ul li a {
+      text-decoration: none;
+      color: var(--blanco);
+      font-weight: bold;
+      padding: 10px 16px;
+      border-radius: 8px;
+      transition: background 0.3s, transform 0.2s;
+    }
+    .main-nav ul li a:hover {
+      background-color: var(--vino);
+      transform: scale(1.1);
+    }
+    main {
+      max-width: 900px;
+      margin: 40px auto 40px auto;
+      padding: 20px;
+      background: var(--gris-claro);
+      border-radius: 16px;
+      box-shadow: 0 2px 8px var(--sombra);
+      min-height: 600px;
+    }
+    .timeline {
+      position: relative;
+      margin: 40px 0;
+      padding-left: 40px;
+      border-left: 4px solid var(--rojo);
+    }
+    .timeline-point {
+      position: relative;
+      margin-bottom: 40px;
+    }
+    .timeline-point:last-child {
+      margin-bottom: 0;
+    }
+    .timeline-marker {
+      position: absolute;
+      left: -18px;
+      top: 0;
+      width: 32px;
+      height: 32px;
+      background: var(--rojo);
+      border: 4px solid var(--blanco);
+      border-radius: 50%;
+      z-index: 1;
+      box-shadow: 0 2px 6px var(--sombra);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      color: var(--blanco);
+      font-size: 1.1em;
+    }
+    .timeline-content {
+      margin-left: 30px;
+      background: var(--blanco);
+      padding: 18px 24px;
+      border-radius: 10px;
+      box-shadow: 0 1px 4px var(--sombra);
+      position: relative;
+      min-width: 200px;
+    }
+    .timeline-content h3 {
+      margin-top: 0;
+      color: var(--rojo);
+    }
+    .timeline-content p {
+      margin-bottom: 0;
+    }
+    /* Botón Ir estilo amarillo-anaranjado */
+    .btn-ir {
+      background: linear-gradient(90deg, var(--amarillo), var(--naranja));
+      border: none;
+      color: white;
+      font-weight: bold;
+      padding: 8px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 12px;
+      transition: background 0.3s ease;
+      font-size: 1em;
+      display: inline-block;
+    }
+    .btn-ir:hover {
+      background: linear-gradient(90deg, var(--naranja), var(--amarillo));
+    }
+    footer {
+      background: linear-gradient(90deg, var(--vino), var(--azul));
+      color: var(--blanco);
+      text-align: center;
+      padding: 20px 0 10px 0;
+      margin-top: 40px;
+      box-shadow: 0 -2px 8px var(--sombra);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="img/min_tic.png" alt="Logo de las TIC">
+    <h1>Línea del Tiempo: Origen</h1>
+    <img src="img/mapa-de-colombia.png" alt="Mapa de Colombia">
+  </header>
+  <nav class="main-nav">
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="pindi.html">Pueblos Indígenas</a></li>
+      <li><a href="derechosF.html">Derechos Fundamentales</a></li>
+      <li><a href="juegos.html">Juegos</a></li>
+    </ul>
+  </nav>
+  <main>
+    <h2>Línea del Tiempo del Origen</h2>
+    <div class="timeline" id="timeline">
+      <!-- Timeline points will be inserted here by JS -->
+    </div>
+  </main>
+  <footer>
+    <p>&copy; 2025 - Todos los derechos reservados</p>
+    <p>Nombre del CIPA: Las trenzas del calvo</p>
+    <p>Las TIC en Colombia</p>
+  </footer>
+  <script>
+    // Timeline data
+    const timelineData = [
+      { year: 'Origen', title: 'El Origen', desc: 'Leyendas y mitos ancestrales sobre la creación del mundo y la llegada de los primeros pueblos a Colombia.' },
+      { year: 'Prehistoria', title: 'Primeros asentamientos', desc: 'Evidencias arqueológicas muestran presencia humana en Colombia hace más de 14,000 años.' },
+      { year: 'Siglo VIII', title: 'Culturas precolombinas', desc: 'Desarrollo de culturas como los Muiscas, Taironas, Quimbayas y Zenúes.' },
+      { year: '1499', title: 'Llegada de los españoles', desc: 'Inicio de la colonización y el mestizaje, impacto en los pueblos originarios.' },
+      { year: '1810', title: 'Independencia', desc: 'Participación de indígenas en la lucha por la independencia de Colombia.' },
+      { year: '1991', title: 'Nueva Constitución', desc: 'Reconocimiento de los derechos colectivos y territoriales de los pueblos indígenas.' },
+      { year: 'Actualidad', title: 'Presente', desc: 'Diversidad, resistencia y aportes de los pueblos indígenas en la Colombia contemporánea.' }
+    ];
+    const timeline = document.getElementById('timeline');
+    timelineData.forEach((point, idx) => {
+      const div = document.createElement('div');
+      div.className = 'timeline-point';
+      div.innerHTML = `
+        <div class="timeline-marker">${idx+1}</div>
+        <div class="timeline-content">
+          <h3>${point.year}: ${point.title}</h3>
+          <p>${point.desc}</p>
+          <button class="btn-ir" data-index="${idx+1}">Ir</button>
+        </div>
+      `;
+      timeline.appendChild(div);
+    });
+
+    // Evento click para botones "Ir"
+    document.querySelectorAll('.btn-ir').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const index = btn.getAttribute('data-index');
+        window.location.href = `OriHisto.html?id=${index}`;
+      });
+    });
+  </script>
+</body>
+</html>
