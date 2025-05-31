@@ -116,6 +116,24 @@
     .back-button:hover {
       background-color: var(--vino);
     }
+    .regresar-fixed {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: var(--rojo);
+      color: var(--blanco);
+      padding: 14px 28px;
+      border-radius: 10px;
+      font-size: 1.2em;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 4px 12px var(--sombra);
+      z-index: 1000;
+      transition: background 0.3s;
+    }
+    .regresar-fixed:hover {
+      background-color: var(--vino);
+    }
   </style>
 </head>
 <body>
@@ -131,7 +149,7 @@
       <li><a href="pindi.html">Pueblos Indígenas</a></li>
       <li><a href="derechosF.html">Derechos Fundamentales</a></li>
       <li><a href="juegos.html">Juegos</a></li>
-      <li><a href="origen.html?info=derechos1">Origen</a></li>
+      <!-- <li><a href="origen.html?info=derechos1">Origen</a></li> -->
     </ul>
   </nav>
 
@@ -238,52 +256,52 @@
       </p>`;
       } else if (tipo === 'derechos6') {
         contenido = `<h2>Reconocimiento de los derechos indígenas en la Constitución de 1991</h2><p>La promulgación de la Constitución Política de Colombia de 1991 significó un cambio fundamental en la relación entre el Estado y los pueblos indígenas. Luego de años de exclusión, esta nueva Constitución reconoció oficialmente sus derechos colectivos, culturales y territoriales, sentando las bases para una Colombia pluriétnica y multicultural. 
-  <a href="https://es.wikipedia.org/wiki/Constituci%C3%B3n_de_Colombia_de_1991" target="_blank">[Wikipedia]</a>
+        <a href="https://es.wikipedia.org/wiki/Constituci%C3%B3n_de_Colombia_de_1991" target="_blank">[Wikipedia]</a>
 
-  Uno de los avances más destacados fue el reconocimiento de la diversidad étnica y cultural de la nación. El artículo 7 consagra que "el Estado reconoce y protege la diversidad étnica y cultural de la Nación colombiana", lo que marcó un quiebre con constituciones anteriores que privilegiaban una identidad homogénea. 
-  <a href="https://es.wikipedia.org/wiki/Constituci%C3%B3n_de_Colombia_de_1991" target="_blank">[Wikipedia]</a>
+        Uno de los avances más destacados fue el reconocimiento de la diversidad étnica y cultural de la nación. El artículo 7 consagra que "el Estado reconoce y protege la diversidad étnica y cultural de la Nación colombiana", lo que marcó un quiebre con constituciones anteriores que privilegiaban una identidad homogénea. 
+        <a href="https://es.wikipedia.org/wiki/Constituci%C3%B3n_de_Colombia_de_1991" target="_blank">[Wikipedia]</a>
 
-  En cuanto a los derechos territoriales, los artículos 329 y 330 garantizan la propiedad colectiva de los resguardos indígenas y les otorgan autonomía para administrarse conforme a sus costumbres y tradiciones. Este reconocimiento permite que las comunidades puedan proteger sus territorios ancestrales y ejercer autogobierno. 
-  <a href="https://corteidh.or.cr/" target="_blank">[CorteIDH]</a> <a href="https://c.bcn.cl/" target="_blank">[c.bcn.cl]</a> <a href="https://elpais.com/" target="_blank">[El País]</a>
+        En cuanto a los derechos territoriales, los artículos 329 y 330 garantizan la propiedad colectiva de los resguardos indígenas y les otorgan autonomía para administrarse conforme a sus costumbres y tradiciones. Este reconocimiento permite que las comunidades puedan proteger sus territorios ancestrales y ejercer autogobierno. 
+        <a href="https://corteidh.or.cr/" target="_blank">[CorteIDH]</a> <a href="https://c.bcn.cl/" target="_blank">[c.bcn.cl]</a> <a href="https://elpais.com/" target="_blank">[El País]</a>
 
-  Otro aspecto clave fue la jurisdicción especial indígena. Según el artículo 246, las autoridades indígenas pueden ejercer funciones jurisdiccionales dentro de su territorio, de acuerdo con sus normas y procedimientos, siempre y cuando no sean contrarios a la Constitución. Esto dio validez a sus sistemas jurídicos tradicionales. 
-  <a href="https://igualdad.cepal.org/" target="_blank">[igualdad.cepal.org]</a> <a href="https://corteidh.or.cr/" target="_blank">[CorteIDH]</a> <a href="https://pdba.georgetown.edu/" target="_blank">[pdba.georgetown.edu]</a>
+        Otro aspecto clave fue la jurisdicción especial indígena. Según el artículo 246, las autoridades indígenas pueden ejercer funciones jurisdiccionales dentro de su territorio, de acuerdo con sus normas y procedimientos, siempre y cuando no sean contrarios a la Constitución. Esto dio validez a sus sistemas jurídicos tradicionales. 
+        <a href="https://igualdad.cepal.org/" target="_blank">[igualdad.cepal.org]</a> <a href="https://corteidh.or.cr/" target="_blank">[CorteIDH]</a> <a href="https://pdba.georgetown.edu/" target="_blank">[pdba.georgetown.edu]</a>
 
-  En el ámbito político, el artículo 171 establece una circunscripción especial para que las comunidades indígenas tengan representación en el Congreso, asegurando su participación activa en las decisiones legislativas del país. 
-  <a href="https://igualdad.cepal.org/" target="_blank">[igualdad.cepal.org]</a>
+        En el ámbito político, el artículo 171 establece una circunscripción especial para que las comunidades indígenas tengan representación en el Congreso, asegurando su participación activa en las decisiones legislativas del país. 
+        <a href="https://igualdad.cepal.org/" target="_blank">[igualdad.cepal.org]</a>
 
-  En materia lingüística y educativa, el artículo 10 reconoce que las lenguas indígenas son oficiales en sus territorios, y el artículo 68 garantiza una educación respetuosa de su identidad cultural, lo cual refuerza la conservación de sus saberes ancestrales. 
-  <a href="https://es.wikipedia.org/wiki/Constituci%C3%B3n_de_Colombia_de_1991" target="_blank">[Wikipedia]</a>
+        En materia lingüística y educativa, el artículo 10 reconoce que las lenguas indígenas son oficiales en sus territorios, y el artículo 68 garantiza una educación respetuosa de su identidad cultural, lo cual refuerza la conservación de sus saberes ancestrales. 
+        <a href="https://es.wikipedia.org/wiki/Constituci%C3%B3n_de_Colombia_de_1991" target="_blank">[Wikipedia]</a>
 
-  Complementando el marco constitucional, Colombia ratificó en 1991 el Convenio 169 de la OIT mediante la Ley 21, en el cual se reconocen los derechos de los pueblos indígenas a conservar sus culturas, formas de vida y a participar en decisiones que los afecten directamente. 
-  <a href="https://www.anla.gov.co/" target="_blank">[ANLA]</a> <a href="https://c.bcn.cl/" target="_blank">[c.bcn.cl]</a>
+        Complementando el marco constitucional, Colombia ratificó en 1991 el Convenio 169 de la OIT mediante la Ley 21, en el cual se reconocen los derechos de los pueblos indígenas a conservar sus culturas, formas de vida y a participar en decisiones que los afecten directamente. 
+        <a href="https://www.anla.gov.co/" target="_blank">[ANLA]</a> <a href="https://c.bcn.cl/" target="_blank">[c.bcn.cl]</a>
 
-  No obstante los avances legales, las comunidades indígenas siguen enfrentando retos como la minería ilegal, la deforestación, la violencia y el escaso apoyo estatal, lo que limita la plena implementación de sus derechos y autonomía. 
+        No obstante los avances legales, las comunidades indígenas siguen enfrentando retos como la minería ilegal, la deforestación, la violencia y el escaso apoyo estatal, lo que limita la plena implementación de sus derechos y autonomía. 
 
-  En conclusión, la Constitución de 1991 representó un punto de inflexión en la protección de los pueblos indígenas en Colombia. Sin embargo, es necesario fortalecer el compromiso estatal y social para garantizar que estos derechos se traduzcan en realidades tangibles. </p>`;
+        En conclusión, la Constitución de 1991 representó un punto de inflexión en la protección de los pueblos indígenas en Colombia. Sin embargo, es necesario fortalecer el compromiso estatal y social para garantizar que estos derechos se traduzcan en realidades tangibles. </p>`;
       } else if (tipo === 'derechos7') {
         contenido = `<h2>Actualidad: Presente - Diversidad, Resistencia y Aportes de los Pueblos Indígenas en la Colombia Contemporánea</h2><p>
-  En la Colombia contemporánea, los pueblos indígenas constituyen un componente fundamental de la diversidad cultural y social del país. A pesar de los numerosos desafíos que enfrentan, estos pueblos mantienen viva su identidad, tradiciones y formas propias de organización, siendo un símbolo de resistencia y resiliencia frente a las dinámicas sociales, políticas y económicas que han marcado la historia nacional.
-  <a href="https://www.un.org/es/observances/indigenous-day" target="_blank">[ONU: Día Internacional de los Pueblos Indígenas]</a>
-  La diversidad étnica de Colombia es notable. Existen más de 100 pueblos indígenas reconocidos oficialmente, con alrededor de un millón y medio de personas identificadas como indígenas, lo que representa aproximadamente el 3.4% de la población nacional. Cada pueblo tiene su propia lengua, cosmovisión, organización social y formas culturales que enriquecen el mosaico cultural colombiano. Esta diversidad es reflejo de una pluralidad histórica que se resiste a desaparecer frente a las presiones de la globalización, la homogeneización cultural y las políticas estatales centralizadas.
-  <a href="https://www.dane.gov.co/index.php/estadisticas-por-tema/poblacion-y-demografia/poblacion-indigena" target="_blank">[DANE]</a>
-  Uno de los principales aspectos que caracterizan la actualidad indígena es la resistencia cultural. A través de la defensa de sus territorios ancestrales, el rescate de sus lenguas originarias, y la revitalización de sus prácticas ancestrales en la educación, la medicina tradicional y la espiritualidad, los pueblos indígenas se han convertido en guardianes de un legado milenario. Esta resistencia no es solo cultural sino también política y social, manifestándose en la defensa de sus derechos colectivos frente a amenazas como la minería ilegal, el desplazamiento forzado y los conflictos armados.
-  <a href="https://www.onic.org.co/" target="_blank">[ONIC]</a> <a href="https://www.amnesty.org/es/latest/news/2021/09/colombia-indigenous-rights/" target="_blank">[Amnistía Internacional]</a>
-  La Constitución de 1991 marcó un antes y un después en el reconocimiento formal de los derechos de los pueblos indígenas en Colombia, otorgándoles autonomía, reconocimiento territorial y participación política. Sin embargo, en la práctica, las comunidades indígenas enfrentan obstáculos significativos para la implementación plena de estos derechos. En muchas regiones, los indígenas continúan siendo víctimas de la violencia, la exclusión social y la pobreza estructural, condiciones que afectan directamente su calidad de vida y el desarrollo integral de sus comunidades.
-  <a href="https://www.constitucioncolombia.com/titulo-1/capitulo-1/articulo-7" target="_blank">[Constitución Política de Colombia]</a> <a href="https://www.elespectador.com/colombia2020/paz-y-derechos-humanos/las-comunidades-indigenas-en-colombia-en-el-contexto-de-paz/" target="_blank">[El Espectador]</a>
-  En este contexto, los movimientos indígenas han desarrollado una agenda política y social fuerte que busca no solo la reivindicación de sus derechos, sino también la transformación de las relaciones con el Estado y la sociedad colombiana. Organizaciones como la Asociación de Cabildos Indígenas del Norte del Cauca (ACIN), el Consejo Regional Indígena del Cauca (CRIC), y la Organización Nacional Indígena de Colombia (ONIC), entre otras, han sido protagonistas en procesos de movilización social, defensa territorial y diálogos con el gobierno.
-  <a href="https://www.acin.org.co/" target="_blank">[ACIN]</a> <a href="https://www.cric-colombia.org/" target="_blank">[CRIC]</a> <a href="https://www.onic.org.co/" target="_blank">[ONIC]</a>
-  Además de la resistencia, los pueblos indígenas aportan significativamente a la sociedad colombiana en diversos ámbitos. En la protección ambiental, por ejemplo, las comunidades indígenas gestionan más del 30% del territorio nacional, incluyendo ecosistemas estratégicos como la Amazonía y la Sierra Nevada de Santa Marta. Su conocimiento tradicional y prácticas sustentables son clave para la conservación de la biodiversidad y la lucha contra el cambio climático. Estos aportes son cada vez más reconocidos a nivel nacional e internacional como modelos de desarrollo sostenible.
-  <a href="https://www.unep.org/es" target="_blank">[Programa de las Naciones Unidas para el Medio Ambiente]</a> <a href="https://www.nationalgeographic.com.es/naturaleza/que-son-pueblos-indigenas_14328" target="_blank">[National Geographic]</a>
-  En el campo cultural, los indígenas contribuyen a la riqueza artística y cultural de Colombia con sus artesanías, música, danza, ceremonias y expresiones lingüísticas. Sus festividades y rituales son una manifestación viva de su identidad y un puente para el diálogo intercultural, que enriquece la pluralidad cultural del país. La revitalización de las lenguas originarias es un esfuerzo permanente que se refleja en la educación bilingüe intercultural, un derecho reconocido en la Constitución que busca preservar estas expresiones lingüísticas frente a su riesgo de desaparición.
-  <a href="https://unesdoc.unesco.org/ark:/48223/pf0000265671_spa" target="_blank">[UNESCO]</a> <a href="https://www.mineducacion.gov.co/" target="_blank">[Ministerio de Educación Colombia]</a>
-  En el ámbito político, la representación indígena en espacios de decisión ha aumentado, con curules especiales en el Congreso de la República que permiten llevar sus demandas y perspectivas a la política nacional. Sin embargo, la inclusión política aún enfrenta retos, como la violencia política contra líderes indígenas y la necesidad de fortalecer mecanismos de participación efectiva.
-  <a href="https://www.congresovisible.org/curules-especiales-indigenas/" target="_blank">[Congreso Visible]</a> <a href="https://www.eltiempo.com/justicia/servicios/la-violencia-politica-contra-los-lideres-indigenas-en-colombia-652465" target="_blank">[El Tiempo]</a>
-  Es importante destacar también el papel de la mujer indígena, quien ha emergido como una líder fundamental en la defensa de los derechos colectivos y en la construcción de paz. Las mujeres indígenas lideran procesos comunitarios, protegen saberes ancestrales y luchan contra las múltiples formas de discriminación que enfrentan, tanto por su condición étnica como por su género.
-  <a href="https://www.unwomen.org/es/news/stories/2021/10/feature-indigenous-women-leaders" target="_blank">[ONU Mujeres]</a> <a href="https://cimacnoticias.com.mx/2019/05/09/mujeres-indigenas-el-corazon-de-la-lucha-por-los-derechos-humanos" target="_blank">[Cimac Noticias]</a>
-  Finalmente, el presente de los pueblos indígenas en Colombia es una historia de lucha constante por la dignidad, el reconocimiento y la justicia social. Su presencia y aportes son un pilar esencial para la construcción de una Colombia más justa, diversa y respetuosa de los derechos humanos y la naturaleza. La sociedad colombiana tiene el desafío y la responsabilidad de escuchar, reconocer y apoyar estos procesos para avanzar hacia un país donde la diversidad cultural sea valorada y protegida como un patrimonio común.
-  <a href="https://www.elespectador.com/opinion/columnistas/derechos-indigenas-un-reto-para-colombia/" target="_blank">[El Espectador]</a>
-</p>`;
+          En la Colombia contemporánea, los pueblos indígenas constituyen un componente fundamental de la diversidad cultural y social del país. A pesar de los numerosos desafíos que enfrentan, estos pueblos mantienen viva su identidad, tradiciones y formas propias de organización, siendo un símbolo de resistencia y resiliencia frente a las dinámicas sociales, políticas y económicas que han marcado la historia nacional.
+          <a href="https://www.un.org/es/observances/indigenous-day" target="_blank">[ONU: Día Internacional de los Pueblos Indígenas]</a>
+          La diversidad étnica de Colombia es notable. Existen más de 100 pueblos indígenas reconocidos oficialmente, con alrededor de un millón y medio de personas identificadas como indígenas, lo que representa aproximadamente el 3.4% de la población nacional. Cada pueblo tiene su propia lengua, cosmovisión, organización social y formas culturales que enriquecen el mosaico cultural colombiano. Esta diversidad es reflejo de una pluralidad histórica que se resiste a desaparecer frente a las presiones de la globalización, la homogeneización cultural y las políticas estatales centralizadas.
+          <a href="https://www.dane.gov.co/index.php/estadisticas-por-tema/poblacion-y-demografia/poblacion-indigena" target="_blank">[DANE]</a>
+          Uno de los principales aspectos que caracterizan la actualidad indígena es la resistencia cultural. A través de la defensa de sus territorios ancestrales, el rescate de sus lenguas originarias, y la revitalización de sus prácticas ancestrales en la educación, la medicina tradicional y la espiritualidad, los pueblos indígenas se han convertido en guardianes de un legado milenario. Esta resistencia no es solo cultural sino también política y social, manifestándose en la defensa de sus derechos colectivos frente a amenazas como la minería ilegal, el desplazamiento forzado y los conflictos armados.
+          <a href="https://www.onic.org.co/" target="_blank">[ONIC]</a> <a href="https://www.amnesty.org/es/latest/news/2021/09/colombia-indigenous-rights/" target="_blank">[Amnistía Internacional]</a>
+          La Constitución de 1991 marcó un antes y un después en el reconocimiento formal de los derechos de los pueblos indígenas en Colombia, otorgándoles autonomía, reconocimiento territorial y participación política. Sin embargo, en la práctica, las comunidades indígenas enfrentan obstáculos significativos para la implementación plena de estos derechos. En muchas regiones, los indígenas continúan siendo víctimas de la violencia, la exclusión social y la pobreza estructural, condiciones que afectan directamente su calidad de vida y el desarrollo integral de sus comunidades.
+          <a href="https://www.constitucioncolombia.com/titulo-1/capitulo-1/articulo-7" target="_blank">[Constitución Política de Colombia]</a> <a href="https://www.elespectador.com/colombia2020/paz-y-derechos-humanos/las-comunidades-indigenas-en-colombia-en-el-contexto-de-paz/" target="_blank">[El Espectador]</a>
+          En este contexto, los movimientos indígenas han desarrollado una agenda política y social fuerte que busca no solo la reivindicación de sus derechos, sino también la transformación de las relaciones con el Estado y la sociedad colombiana. Organizaciones como la Asociación de Cabildos Indígenas del Norte del Cauca (ACIN), el Consejo Regional Indígena del Cauca (CRIC), y la Organización Nacional Indígena de Colombia (ONIC), entre otras, han sido protagonistas en procesos de movilización social, defensa territorial y diálogos con el gobierno.
+          <a href="https://www.acin.org.co/" target="_blank">[ACIN]</a> <a href="https://www.cric-colombia.org/" target="_blank">[CRIC]</a> <a href="https://www.onic.org.co/" target="_blank">[ONIC]</a>
+          Además de la resistencia, los pueblos indígenas aportan significativamente a la sociedad colombiana en diversos ámbitos. En la protección ambiental, por ejemplo, las comunidades indígenas gestionan más del 30% del territorio nacional, incluyendo ecosistemas estratégicos como la Amazonía y la Sierra Nevada de Santa Marta. Su conocimiento tradicional y prácticas sustentables son clave para la conservación de la biodiversidad y la lucha contra el cambio climático. Estos aportes son cada vez más reconocidos a nivel nacional e internacional como modelos de desarrollo sostenible.
+          <a href="https://www.unep.org/es" target="_blank">[Programa de las Naciones Unidas para el Medio Ambiente]</a> <a href="https://www.nationalgeographic.com.es/naturaleza/que-son-pueblos-indigenas_14328" target="_blank">[National Geographic]</a>
+          En el campo cultural, los indígenas contribuyen a la riqueza artística y cultural de Colombia con sus artesanías, música, danza, ceremonias y expresiones lingüísticas. Sus festividades y rituales son una manifestación viva de su identidad y un puente para el diálogo intercultural, que enriquece la pluralidad cultural del país. La revitalización de las lenguas originarias es un esfuerzo permanente que se refleja en la educación bilingüe intercultural, un derecho reconocido en la Constitución que busca preservar estas expresiones lingüísticas frente a su riesgo de desaparición.
+          <a href="https://unesdoc.unesco.org/ark:/48223/pf0000265671_spa" target="_blank">[UNESCO]</a> <a href="https://www.mineducacion.gov.co/" target="_blank">[Ministerio de Educación Colombia]</a>
+          En el ámbito político, la representación indígena en espacios de decisión ha aumentado, con curules especiales en el Congreso de la República que permiten llevar sus demandas y perspectivas a la política nacional. Sin embargo, la inclusión política aún enfrenta retos, como la violencia política contra líderes indígenas y la necesidad de fortalecer mecanismos de participación efectiva.
+          <a href="https://www.congresovisible.org/curules-especiales-indigenas/" target="_blank">[Congreso Visible]</a> <a href="https://www.eltiempo.com/justicia/servicios/la-violencia-politica-contra-los-lideres-indigenas-en-colombia-652465" target="_blank">[El Tiempo]</a>
+          Es importante destacar también el papel de la mujer indígena, quien ha emergido como una líder fundamental en la defensa de los derechos colectivos y en la construcción de paz. Las mujeres indígenas lideran procesos comunitarios, protegen saberes ancestrales y luchan contra las múltiples formas de discriminación que enfrentan, tanto por su condición étnica como por su género.
+          <a href="https://www.unwomen.org/es/news/stories/2021/10/feature-indigenous-women-leaders" target="_blank">[ONU Mujeres]</a> <a href="https://cimacnoticias.com.mx/2019/05/09/mujeres-indigenas-el-corazon-de-la-lucha-por-los-derechos-humanos" target="_blank">[Cimac Noticias]</a>
+          Finalmente, el presente de los pueblos indígenas en Colombia es una historia de lucha constante por la dignidad, el reconocimiento y la justicia social. Su presencia y aportes son un pilar esencial para la construcción de una Colombia más justa, diversa y respetuosa de los derechos humanos y la naturaleza. La sociedad colombiana tiene el desafío y la responsabilidad de escuchar, reconocer y apoyar estos procesos para avanzar hacia un país donde la diversidad cultural sea valorada y protegida como un patrimonio común.
+          <a href="https://www.elespectador.com/opinion/columnistas/derechos-indigenas-un-reto-para-colombia/" target="_blank">[El Espectador]</a>
+        </p>`;
       } else {
         contenido = `<h2>No hay contenido disponible</h2><p>El tipo "${tipo}" no está definido.</p>`;
       }
@@ -293,5 +311,6 @@
     const info = getParametro('info');
     mostrarContenido(info);
   </script>
+<a href="origen.html" class="regresar-fixed">Regresar</a>
 </body>
 </html>
