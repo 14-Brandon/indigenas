@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Derechos Indígenas</title>
+  <link rel="stylesheet" href="juegos.css" />
+  <style>
+    :root {
+      --rojo: #D9042B;
+      --vino: #730220;
+      --azuloscuro: #023373;
+      --amarillo: #F2B807;
+      --naranja: #D97904;
+      --blanco: #fff;
+      --gris-claro: #f2f2f2;
+      --sombra: rgba(0, 0, 0, 0.15);
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-image: url('img/bandera_colombia.png');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      background-attachment: fixed;
+      position: relative;
+      min-height: auto;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: rgba(255, 255, 255, 0.75);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    header {
+      background: linear-gradient(90deg, var(--azuloscuro), var(--vino));
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 4px 12px var(--sombra);
+      position: relative;
+      z-index: 5;
+    }
+    header img {
+      height: 60px;
+    }
+    header h1 {
+      flex-grow: 1;
+      text-align: center;
+      font-size: 2.2em;
+      color: var(--blanco);
+      text-shadow: 1px 1px 2px var(--vino);
+      margin: 0;
+    }
+
+    nav.main-nav {
+      background-color: var(--naranja);
+      padding: 12px 20px;
+      box-shadow: 0 4px 8px var(--sombra);
+      position: relative;
+      z-index: 5;
+    }
+    nav.main-nav ul {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    nav.main-nav ul li a {
+      text-decoration: none;
+      color: var(--blanco);
+      font-weight: bold;
+      padding: 10px 16px;
+      border-radius: 8px;
+      transition: background 0.3s, transform 0.2s;
+    }
+    nav.main-nav ul li a:hover {
+      background-color: var(--vino);
+      transform: scale(1.1);
+    }
+
+    #barra-carga {
+      position: relative;
+      height: 12px;
+      width: 100%;
+      background: #ccc;
+      overflow: hidden;
+      z-index: 5;
+    }
+    #barra-carga .progress {
+      height: 100%;
+      width: 0;
+      background: linear-gradient(90deg, #F2B807 33%, #023373 33% 66%, #D9042B 66%);
+      background-size: 300% 100%;
+      animation: moverBarra 3s linear infinite;
+    }
+
+    @keyframes moverBarra {
+      0% {
+        background-position: 100% 0;
+        width: 0%;
+      }
+      50% {
+        background-position: 0 0;
+        width: 100%;
+      }
+      100% {
+        background-position: -100% 0;
+        width: 0%;
+      }
+    }
+
+    main {
+      max-width: 100%;
+      width: 100%;
+      height: 70vh;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      position: relative;
+      z-index: 10;
+      font-family: Arial, sans-serif;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    h2 {
+      color: var(--vino);
+      text-align: center;
+    }
+    
+    .articulo p {
+      margin-bottom: 25px;
+      text-align: left;
+    }
+
+    .vulnerado {
+      background: #ffe6e6;
+      border-left: 6px solid red;
+      padding: 10px;
+      margin-top: 10px;
+    }
+
+    footer {
+      background: linear-gradient(90deg, var(--vino), var(--azuloscuro));
+      color: var(--blanco);
+      text-align: center;
+      padding: 20px 0 10px 0;
+      margin-top: 40px;
+      box-shadow: 0 -2px 8px var(--sombra);
+      position: relative;
+      z-index: 5;
+    }
+
+    #condor-volando {
+      position: fixed;
+      top: 30%;
+      left: -150px;
+      width: 150px;
+      height: auto;
+      opacity: 0.85;
+      z-index: 1;
+      animation: volarCondor 12s linear infinite alternate;
+      pointer-events: none;
+    }
+
+    @keyframes volarCondor {
+      0% {
+        left: -150px;
+        transform: scaleX(1);
+      }
+      50% {
+        left: calc(100vw - 150px);
+        transform: scaleX(1);
+      }
+      51% {
+        transform: scaleX(-1);
+      }
+      100% {
+        left: -150px;
+        transform: scaleX(-1);
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="img/min_tic.png" alt="Logo de las TIC" />
+    <h1>Derechos Indígenas</h1>
+    <img src="img/mapa-de-colombia.png" alt="Mapa de Colombia" />
+  </header>
+
+  <nav class="main-nav">
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="pindi.html">Pueblos Indígenas</a></li>
+      <li><a href="derechosF.html">Derechos Fundamentales</a></li>
+      <li><a href="juegos.html">Juegos</a></li>
+    </ul>
+  </nav>
+  
+  <div id="barra-carga">
+    <div class="progress"></div>
+  </div>
+
+  <main id="contenidoDerecho">
+    <!-- Aquí se inyectará el contenido dinámico -->
+    <h2>Cargando contenido...</h2>
+  </main>
+
+  <img id="condor-volando" src="img/condor.png" alt="Cóndor de Colombia volando" />
+
+  <footer>
+    <p>&copy; 2025 - Todos los derechos reservados  
+    Nombre del CIPA: Las trenzas del calvo          
+    Las TIC en Colombia</p>
+  </footer>
+
+  <script>
+    // Objeto con los derechos y sus artículos
+    const derechos = {
+  derechos1: {
+    titulo: "🛡️ 1. Derecho a la Identidad Étnica y Cultural",
+    articulos: [
+      {
+        articulo: "Artículo 7",
+        texto: "El Estado reconoce y protege la diversidad étnica y cultural de la Nación colombiana.",
+        vulnerado: true,
+        explicacion: "Este derecho se vulnera cuando no se garantiza el respeto y visibilidad de las culturas indígenas en la educación, medios y políticas públicas."
+      },
+      {
+        articulo: "Artículo 70",
+        texto: "La cultura en sus diversas manifestaciones es fundamento de la nacionalidad. Se reconoce la igualdad y dignidad de todas las culturas.",
+        vulnerado: false
+      },
+      {
+        articulo: "Artículo 71",
+        texto: "El Estado promoverá y fomentará el acceso a la cultura y apoyará a las comunidades indígenas para conservar su identidad cultural.",
+        vulnerado: false
+      }
+    ]
+  },
+  derechos2: {
+    titulo: "🗣️ 2. Derecho a la Lengua y a la Educación Propia",
+    articulos: [
+      {
+        articulo: "Artículo 10",
+        texto: "Se reconocen como oficiales las lenguas y dialectos de los grupos étnicos en sus territorios. La enseñanza será bilingüe en las zonas indígenas.",
+        vulnerado: true,
+        explicacion: "Muchos pueblos indígenas no tienen acceso a servicios públicos, educación o justicia en su lengua nativa, lo cual limita su participación plena."
+      },
+      {
+        articulo: "Artículo 68",
+        texto: "Las comunidades indígenas tienen derecho a una educación propia que respete y desarrolle su identidad cultural.",
+        vulnerado: true,
+        explicacion: "No siempre se reconoce ni se apoya la educación propia con enfoque étnico, lo que debilita la transmisión de saberes ancestrales."
+      }
+    ]
+  },
+  derechos3: {
+    titulo: "🏞️ 3. Derecho a la Tierra y Territorio",
+    articulos: [
+      {
+        articulo: "Artículo 7 (Constitución)",
+        texto: "El Estado reconoce la posesión y la propiedad comunitaria de las tierras que tradicionalmente han ocupado las comunidades indígenas.",
+        vulnerado: true,
+        explicacion: "El despojo, la explotación indebida y la falta de reconocimiento legal vulneran este derecho."
+      },
+      {
+        articulo: "Artículo 330",
+        texto: "Las autoridades indígenas tienen autonomía para gobernar sus territorios.",
+        vulnerado: false
+      }
+    ]
+  },
+  derechos4: {
+    titulo: "⚖️ 4. Derecho a la Autonomía y Gobierno Propio",
+    articulos: [
+      {
+        articulo: "Artículo 246",
+        texto: "Las comunidades indígenas tienen derecho a mantener y desarrollar sus formas propias de organización social, económica, y cultural.",
+        vulnerado: false
+      },
+      {
+        articulo: "Artículo 330",
+        texto: "Las autoridades indígenas administran justicia propia y ejercen funciones administrativas en sus territorios.",
+        vulnerado: true,
+        explicacion: "Intervenciones externas y falta de reconocimiento legal debilitan este derecho."
+      }
+    ]
+  },
+  derechos5: {
+    titulo: "🧑‍⚖️ 5. Derecho a la Participación Política",
+    articulos: [
+      {
+        articulo: "Artículo 171 y 176",
+        texto: "Garantiza la representación de los pueblos indígenas en el Senado y la Cámara de Representantes.",
+        vulnerado: false
+      },
+      {
+        articulo: "Artículo 40",
+        texto: "Se asegura la participación de los ciudadanos (incluidos los indígenas) en la conformación del poder político.",
+        vulnerado: false
+      }
+    ]
+  },
+  derechos6: {
+    titulo: "⚖️ 6. Derecho a la Jurisdicción Especial Indígena",
+    articulos: [
+      {
+        articulo: "Artículo 246",
+        texto: "Las autoridades indígenas pueden ejercer funciones jurisdiccionales dentro de su territorio conforme a sus normas y procedimientos, respetando los derechos humanos.",
+        vulnerado: false
+      }
+    ]
+  },
+  derechos7: {
+    titulo: "🧬 7. Derecho a la Consulta Previa",
+    articulos: [
+      {
+        articulo: "Convenio 169 de la OIT",
+        texto: "Las comunidades indígenas deben ser consultadas antes de adoptar medidas legislativas o administrativas que las afecten directamente, especialmente en proyectos mineros, hidroeléctricos o de infraestructura.",
+        vulnerado: true,
+        explicacion: "La falta de consulta previa adecuada ha llevado a conflictos y violaciones de derechos territoriales y culturales."
+      }
+    ]
+  }
+};
+
+    // Función para obtener el parámetro 'derecho' de la URL
+    function obtenerParametro(nombre) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(nombre);
+    }
+
+    // Función para mostrar el contenido basado en el parámetro
+    function mostrarContenido() {
+      const parametro = obtenerParametro('derecho');
+      const contenedor = document.getElementById('contenidoDerecho');
+
+      if (!parametro || !derechos[parametro]) {
+        contenedor.innerHTML = '<p style="text-align:right; font-size:1.2em; color:var(--rojo);">Seleccione un derecho válido desde el mapa conceptual.</p>';
+        return;
+      }
+
+      const derecho = derechos[parametro];
+      let html = `<h2>${derecho.titulo}</h2>`;
+
+      derecho.articulos.forEach(a => {
+        html += `<div class="articulo">
+          <h3>${a.articulo}</h3>
+          <p>${a.texto}</p>`;
+
+        if (a.vulnerado) {
+          html += `<div class="vulnerado">
+            <strong>Vulneración detectada:</strong> ${a.explicacion || 'No se especificó explicación.'}
+          </div>`;
+        }
+
+        html += `</div>`;
+      });
+
+      contenedor.innerHTML = html;
+    }
+
+    document.addEventListener('DOMContentLoaded', mostrarContenido);
+  </script>
+
+</body>
+</html>
