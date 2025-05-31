@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Derechos Fundamentales Indígenas</title>
+  <link rel="stylesheet" href="juegos.css">
+  <style>
+    #mapaDerechos {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    .derecho {
+      background: var(--amarillo);
+      color: var(--vino);
+      font-weight: bold;
+      padding: 14px 20px;
+      border-radius: 10px;
+      margin: 10px 0;
+      box-shadow: 0 3px 6px var(--sombra);
+      width: 80%;
+      text-align: center;
+      text-decoration: none;
+      transition: transform 0.2s, background 0.3s;
+      cursor: pointer;
+      display: inline-block;
+    }
+
+    .derecho:hover {
+      background: var(--naranja);
+      transform: scale(1.05);
+    }
+
+    /* Main ocupa toda la pantalla sin scroll interno */
+    main {
+  text-align: center; /* centra texto y elementos inline */
+  width: 100%; /* ancho completo */;
+  height: auto; /* alto completo */;
+}
+
+  </style>
+</head>
+<body>
+
+<header>
+  <img id="t1" src="/img/min_tic.png" alt="Logo de las TIC">
+  <h1>LAS TIC EN COLOMBIA</h1>
+  <img src="img/mapa-de-colombia.png" alt="Bandera de Colombia">
+</header>
+
+<nav class="main-nav">
+  <ul>
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="pindi.html">Pueblos Indígenas</a></li>
+    <li><a href="Origen.html">Origen en Colombia</a></li>
+    <li><a href="juegos.html">Juegos</a></li>
+  </ul>
+</nav>
+
+<main>
+  <h2>Mapa Conceptual: Derechos Fundamentales de los Pueblos Indígenas</h2>
+  <div id="mapaDerechos">
+    <a class="derecho" href="articulos.html?derecho=derechos1">🛡️ Derecho a la Identidad Étnica y Cultural</a>
+    <a class="derecho" href="articulos.html?derecho=derechos2">🗣️ Derecho a la Lengua y a la Educación Propia</a>
+    <a class="derecho" href="articulos.html?derecho=derechos3">🏞️ Derecho al Territorio</a>
+    <a class="derecho" href="articulos.html?derecho=derechos4">🗳️ Derecho a la Autonomía y Autogobierno</a>
+    <a class="derecho" href="articulos.html?derecho=derechos5">🧑‍⚖️ Derecho a la Participación Política</a>
+    <a class="derecho" href="articulos.html?derecho=derechos6">⚖️ Derecho a la Jurisdicción Especial Indígena</a>
+    <a class="derecho" href="articulos.html?derecho=derechos7">🧬 Derecho a la Consulta Previa</a>
+  </div>
+</main>
+
+<footer>
+  <p>&copy; 2025 Derechos de los Pueblos Indígenas - Proyecto TIC</p>
+</footer>
+
+</body>
+</html>
