@@ -15,10 +15,10 @@
 
   <nav class="main-nav">
     <ul>
-      <li><a href="#">Origen en Colombia</a></li>
       <li><a href="pindi.html">Pueblos Indígenas</a></li>
+      <li><a href="origen.html">Origen en Colombia</a></li>
       <li><a href="derechosF.html">Derechos Fundamentales</a></li>
-      <li><a href="juegos.html">Juegos</a></li>
+      <li><a href="juegos.html">Preguntas</a></li>
     </ul>
   </nav>
   
@@ -53,11 +53,23 @@
     <img id="wayuin" src="img/wayu.png" alt="Wayu">
   </aside>
 
-  <footer>
-    <p id="p1">&copy; 2025 - Todos los derechos reservados </p>
-    <p>Nombre del CIPA: Las trenzas del calvo</p>
-    <p id="p1">Las TIC en Colombia</p>
-  </footer>
+<footer>
+  <p id="p1">&copy; 2025 - Todos los derechos reservados </p>
+
+  <p id="p3">
+    <button onclick="abrirVentana()" >
+      Nombre del CIPA: Las trenzas del calvo
+    </button>
+  </p>
+
+  <p id="p1">Las TIC en Colombia</p>
+</footer>
+
+<script>
+  function abrirVentana() {
+    window.open("colaboradores.html", "_blank", "width=700,height=600");
+  }
+</script>
 
 </body>
 </html>
