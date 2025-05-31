@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Juegos: Pueblos Indígenas</title>
+  <link rel="stylesheet" href="juegos.css">
+</head>
+<body>
+
+  <header>
+    <img id="t1" src="/img/min_tic.png" alt="Logo de las TIC">
+    <h1>LAS TIC EN COLOMBIA</h1>
+    <img src="img/mapa-de-colombia.png" alt="Bandera de Colombia">
+  </header>
+
+  <nav class="main-nav">
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="pindi.html">Pueblos Indígenas</a></li>
+      <li><a href="#">Sus Derechos</a></li>
+      <li><a href="juegos.html">Origen en Colombia</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h2>Juego de Preguntas: Pueblos Indígenas en Colombia</h2>
+    <p>Responde las siguientes preguntas para aprender más sobre nuestros pueblos originarios.</p>
+    <form id="quizForm">
+      <ol>
+        <li>
+          <strong>¿Cuántos pueblos indígenas reconoce oficialmente Colombia?</strong><br>
+          <input type="radio" name="q1" value="0"> 50<br>
+          <input type="radio" name="q1" value="0"> 90<br>
+          <input type="radio" name="q1" value="1"> 115<br>
+        </li>
+        <li>
+          <strong>¿Cuál es el pueblo indígena más numeroso en Colombia?</strong><br>
+          <input type="radio" name="q2" value="0"> Emberá<br>
+          <input type="radio" name="q2" value="1"> Wayúu<br>
+          <input type="radio" name="q2" value="0"> Kogi<br>
+        </li>
+        <li>
+          <strong>¿En qué departamento se encuentra la Sierra Nevada de Santa Marta, territorio ancestral indígena?</strong><br>
+          <input type="radio" name="q3" value="0"> Antioquia<br>
+          <input type="radio" name="q3" value="0"> Valle del Cauca<br>
+          <input type="radio" name="q3" value="1"> Magdalena<br>
+        </li>
+        <li>
+          <strong>¿Qué lengua indígena es hablada por el pueblo Wayúu?</strong><br>
+          <input type="radio" name="q4" value="1"> Wayuunaiki<br>
+          <input type="radio" name="q4" value="0"> Quechua<br>
+          <input type="radio" name="q4" value="0"> Guaraní<br>
+        </li>
+        <li>
+          <strong>¿Cuál es el principal derecho que protege la Constitución de 1991 a los pueblos indígenas?</strong><br>
+          <input type="radio" name="q5" value="0"> Derecho a la tecnología<br>
+          <input type="radio" name="q5" value="1"> Derecho a la autonomía cultural y territorial<br>
+          <input type="radio" name="q5" value="0"> Derecho al trabajo en ciudades<br>
+        </li>
+      </ol>
+      <button type="submit" id="submitBtn">Enviar respuesta</button>
+      <div id="loadingBarContainer" style="display:none;">
+        <div id="loadingBar"></div>
+      </div>
+      <div id="result" style="display:none;"></div>
+    </form>
+    <p><em>¡Sigue aprendiendo y valorando nuestras raíces indígenas!</em></p>
+  </main>
+
+  <aside id="respuestas" style="display:none">
+    <h2>Respuestas</h2>
+    <div id="respuestasDetalle"></div>
+    <div id="respuestasScore"></div>
+  </aside>
+  <aside id="curiosidades-aside">
+    <h2>Datos curiosos</h2>
+    <ul id="curiosidades">
+      <li>Colombia es el país con mayor diversidad de pueblos indígenas en Sudamérica.</li>
+      <li>Los Wayuu habitan la península de La Guajira y son expertos en tejidos.</li>
+      <li>El pueblo Kogi vive en la Sierra Nevada de Santa Marta y mantiene tradiciones ancestrales.</li>
+      <li>Los Embera son conocidos por sus coloridas artesanías y su música tradicional.</li>
+      <li>El pueblo Nasa (Paez) lucha activamente por la defensa de su territorio.</li>
+      <li>Los Muiscas fueron grandes orfebres y agricultores en el altiplano cundiboyacense.</li>
+      <li>En Colombia existen más de 60 lenguas indígenas vivas.</li>
+      <li>Muchos pueblos indígenas practican la medicina tradicional con plantas sagradas.</li>
+      <li>La Constitución de 1991 reconoce los derechos colectivos de los pueblos indígenas.</li>
+      <li>El sombrero vueltiao es una prenda tradicional de origen indígena zenú.</li>
+    </ul>
+    <canvas id="pixelIndigenas" width="220" height="120" style="display:block;margin:20px auto;"></canvas>
+    <!-- <img src="img/indigenas.jpg" alt="Pueblos indígenas"> -->
+    <div id="result" style="display:none;"></div>
+  </aside>
+
+  <footer>
+    <p id="p1">&copy; 2025 - Todos los derechos reservados</p>
+    <p>Nombre del CIPA: Las trenzas del calvo</p>
+    <p id="p1">Las TIC en Colombia</p>
+  </footer>
+
+</body>
+</html>
+<script>
+document.getElementById('quizForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  document.getElementById('submitBtn').disabled = true;
+  var bar = document.getElementById('loadingBar');
+  var container = document.getElementById('loadingBarContainer');
+  bar.style.width = '0%';
+  container.style.display = 'block';
+  var width = 0;
+  var interval = setInterval(function() {
+    width += 1;
+    bar.style.width = width + '%';
+    if (width >= 100) {
+      clearInterval(interval);
+      setTimeout(function() {
+        // Calculate score and mark answers
+        var correct = 0;
+        for (var i = 1; i <= 5; i++) {
+          var radios = document.getElementsByName('q'+i);
+          var li = radios[0].closest('li');
+          var marks = li.querySelectorAll('.mark');
+          marks.forEach(function(m){ m.remove(); });
+          var answered = false;
+          for (var j = 0; j < radios.length; j++) {
+            if (radios[j].checked) {
+              answered = true;
+              if (radios[j].value === '1') {
+                correct++;
+                var span = document.createElement('span');
+                span.className = 'mark';
+                span.innerHTML = ' ✅';
+                radios[j].parentNode.insertBefore(span, radios[j].nextSibling);
+              } else {
+                var span = document.createElement('span');
+                span.className = 'mark';
+                span.innerHTML = ' ❌';
+                radios[j].parentNode.insertBefore(span, radios[j].nextSibling);
+                for (var k = 0; k < radios.length; k++) {
+                  if (radios[k].value === '1') {
+                    var chulo = document.createElement('span');
+                    chulo.className = 'mark';
+                    chulo.innerHTML = ' ✅';
+                    radios[k].parentNode.insertBefore(chulo, radios[k].nextSibling);
+                  }
+                }
+              }
+            }
+          }
+          if (!answered) {
+            for (var k = 0; k < radios.length; k++) {
+              if (radios[k].value === '1') {
+                var chulo = document.createElement('span');
+                chulo.className = 'mark';
+                chulo.innerHTML = ' ✅';
+                radios[k].parentNode.insertBefore(chulo, radios[k].nextSibling);
+              }
+            }
+          }
+        }
+        container.style.display = 'none';
+        var result = document.getElementById('result');
+        result.innerHTML = 'Preguntas correctas: <strong>' + correct + '/5</strong><br>¡Sigue aprendiendo y valorando nuestras raíces indígenas!';
+        result.style.display = 'block';
+        document.getElementById('submitBtn').disabled = false;
+      }, 200); // Small delay to ensure bar is visually full
+    }
+  }, 30);
+});
+
+function mostrarRespuestas(respuestasUsuario, respuestasCorrectas) {
+  const detalle = document.getElementById('respuestasDetalle');
+  let html = '';
+  let correctas = 0;
+  for (let i = 0; i < respuestasCorrectas.length; i++) {
+    const esCorrecta = respuestasUsuario[i] === respuestasCorrectas[i];
+    if (esCorrecta) correctas++;
+    html += `<div><strong>Pregunta ${i+1}:</strong><br>`;
+    if (!esCorrecta) {
+      html += `Tu respuesta: <span style="color:red">${respuestasUsuario[i] || 'Sin responder'} ✗</span><br>`;
+      html += `Respuesta correcta: <span style="color:green">${respuestasCorrectas[i]} ✓</span><br>`;
+    } else {
+      html += `Tu respuesta: <span style="color:green">${respuestasUsuario[i]} ✓</span><br>`;
+    }
+    html += '</div><hr>';
+  }
+  detalle.innerHTML = html;
+  document.getElementById('respuestasScore').innerHTML = `<strong>Respuestas correctas: ${correctas}/${respuestasCorrectas.length}</strong>`;
+  document.getElementById('respuestas').style.display = 'block';
+}
+// Llama a mostrarRespuestas() después de calificar, pasando los arrays de respuestas del usuario y correctas.
+
+const canvas = document.getElementById('pixelIndigenas');
+const ctx = canvas.getContext('2d');
+const indigena1 = [
+  ['', '', '', '#43aa8b', '#43aa8b', '#43aa8b', '#43aa8b', '', '', ''],  // tocado
+  ['', '', '#43aa8b', '#43aa8b', '#43aa8b', '#43aa8b', '#43aa8b', '#43aa8b', '', ''],
+  ['', '#43aa8b', '#ffe29a', '#ffe29a', '#ffe29a', '#ffe29a', '#ffe29a', '#43aa8b', '#43aa8b', ''],
+  ['', '#43aa8b', '#ffe29a', '#000', '#ffe29a', '#ffe29a', '#000', '#ffe29a', '#43aa8b', ''],
+  ['', '#43aa8b', '#ffe29a', '#ffe29a', '#ffe29a', '#ffe29a', '#ffe29a', '#ffe29a', '#43aa8b', ''],
+  ['', '', '#ffe29a', '#ffe29a', '#ffe29a', '#ffe29a', '#ffe29a', '#ffe29a', '', ''],
+  ['', '', '#ffe29a', '#ffe29a', '#f9c74f', '#f9c74f', '#ffe29a', '#ffe29a', '', ''], // cuello/collar
+  ['', '', '#f9c74f', '#f9c74f', '#f9c74f', '#f9c74f', '#f9c74f', '#f9c74f', '', ''], // pecho
+  ['', '#ffe29a', '#f9c74f', '', '#f9c74f', '#f9c74f', '', '#f9c74f', '#ffe29a', ''], // brazos
+  ['', '#f9c74f', '', '', '#f9c74f', '#f9c74f', '', '', '#f9c74f', ''], // cadera
+  ['', '#577590', '', '', '#577590', '#577590', '', '', '#577590', ''], // falda
+  ['', '', '', '#ffe29a', '', '', '#ffe29a', '', '', ''], // muslos
+  ['', '', '#ffe29a', '', '', '', '', '#ffe29a', '', ''], // rodillas
+  ['', '', '#577590', '', '', '', '', '#577590', '', ''], // pantorrillas
+  ['', '', '#000', '', '', '', '', '#000', '', ''], // pies
+  ['', '', '', '', '', '', '', '', '', '']
+];
+const indigena2 = [
+  ['', '', '', '#577590', '#577590', '#577590', '#577590', '', '', ''], // corona
+  ['', '', '#577590', '#577590', '#577590', '#577590', '#577590', '#577590', '', ''],
+  ['', '#577590', '#ffe29a', '#ffe29a', '#ffe29a', '#ffe29a', '#ffe29a', '#577590', '#577590', ''],
+  ['', '#577590', '#ffe29a', '#000', '#ffe29a', '#ffe29a', '#000', '#ffe29a', '#577590', ''],
+  ['', '#577590', '#ffe29a', '#ffe29a', '#ffe29a', '#ffe29a', '#ffe29a', '#ffe29a', '#577590', ''],
+  ['', '', '#ffe29a', '#ffe29a', '#ffe29a', '#ffe29a', '#ffe29a', '#ffe29a', '', ''],
+  ['', '', '#ffe29a', '#ffe29a', '#f94144', '#f94144', '#ffe29a', '#ffe29a', '', ''], // collar
+  ['', '', '#f94144', '#f94144', '#f94144', '#f94144', '#f94144', '#f94144', '', ''], // pecho
+  ['', '#ffe29a', '#f94144', '', '#f94144', '#f94144', '', '#f94144', '#ffe29a', ''], // brazos
+  ['', '#f94144', '', '', '#f94144', '#f94144', '', '', '#f94144', ''], // cadera
+  ['', '#f3722c', '', '', '#f3722c', '#f3722c', '', '', '#f3722c', ''], // falda
+  ['', '', '', '#ffe29a', '', '', '#ffe29a', '', '', ''], // muslos
+  ['', '', '#ffe29a', '', '', '', '', '#ffe29a', '', ''], // rodillas
+  ['', '', '#f94144', '', '', '', '', '#f94144', '', ''], // pantorrillas
+  ['', '', '#f3722c', '', '', '', '', '#f3722c', '', ''], // pies
+  ['', '', '', '', '', '', '', '', '', '']
+];
+
+function drawIndigena(matrix, x, y, pixelSize) {
+  for (let row = 0; row < matrix.length; row++) {
+    for (let col = 0; col < matrix[row].length; col++) {
+      if (matrix[row][col]) {
+        ctx.fillStyle = matrix[row][col];
+        ctx.fillRect(x + col * pixelSize, y + row * pixelSize, pixelSize, pixelSize);
+      }
+    }
+  }
+}
+let t = 0;
+function animate() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  let jump1 = Math.abs(Math.sin(t)) * 20;
+  let jump2 = Math.abs(Math.sin(t + 1)) * 20;
+  drawIndigena(indigena1, 30, 20 - jump1, 8);
+  drawIndigena(indigena2, 130, 20 - jump2, 8);
+  t += 0.07;
+  requestAnimationFrame(animate);
+}
+animate();
+</script>
