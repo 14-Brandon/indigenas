@@ -23,7 +23,7 @@
     line-height: 1.6;
   }
   
-  /* Header */
+
   header {
     background: linear-gradient(90deg, var(--azul), var(--vino));
     padding: 16px 24px;
@@ -50,7 +50,7 @@
     text-shadow: 1px 1px 2px var(--vino);
   }
   
-  /* Navegación */
+
   .main-nav {
     background-color: var(--naranja);
     padding: 12px 20px;
@@ -78,7 +78,7 @@
     transform: scale(1.1);
   }
   
-  /* Asides */
+
   aside, #a2 {
     width: 25%;
     padding: 20px;
@@ -98,7 +98,7 @@
     float: right;
   }
   
-  /* Contenido principal */
+
   main {
     width: 60%;
     float: left;
@@ -138,7 +138,7 @@
     padding-left: 25px;
   }
   
-  /* Botón */
+
   main a, #submitBtn {
     display: inline-block;
     margin: 20px auto 0;
@@ -165,8 +165,7 @@
     color: #fff;
     cursor: not-allowed;
   }
-  
-  /* Barra de carga */
+
   #loadingBarContainer {
     width: 100%;
     background: #eee;
@@ -184,7 +183,7 @@
     transition: width 0.3s ease-in-out;
   }
   
-  /* Resultado */
+ 
   #submitBtn {
     display: block;
     margin: 30px auto 0 auto;
@@ -207,7 +206,7 @@
     font-weight: bold;
   }
   
-  /* Footer */
+
   footer {
     clear: both;
     background-color: var(--amarillo);
@@ -269,5 +268,25 @@ aside {
   font-size: 1.3em;
   margin-left: 6px;
   vertical-align: middle;
+}
+
+.support-button {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: linear-gradient(90deg, var(--naranja), var(--amarillo));
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.support-button:hover {
+  background-color: #45a049;
 }
   

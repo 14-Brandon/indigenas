@@ -134,6 +134,26 @@
     .regresar-fixed:hover {
       background-color: var(--vino);
     }
+
+    .support-button {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: linear-gradient(90deg, var(--naranja), var(--amarillo));
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.support-button:hover {
+    background-color: #45a049; 
+}
   </style>
 </head>
 <body>
@@ -149,7 +169,7 @@
       <li><a href="pindi.html">Pueblos Indígenas</a></li>
       <li><a href="derechosF.html">Derechos Fundamentales</a></li>
       <li><a href="juegos.html">Preguntas</a></li>
-      <!-- <li><a href="origen.html?info=derechos1">Origen</a></li> -->
+          
     </ul>
   </nav>
 
@@ -312,5 +332,6 @@
     mostrarContenido(info);
   </script>
 <a href="origen.html" class="regresar-fixed">Regresar</a>
+<a href="https://github.com/14-Brandon" class="support-button" target="_blank">Apoyar</a>
 </body>
 </html>

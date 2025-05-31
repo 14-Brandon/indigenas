@@ -120,7 +120,7 @@
     .timeline-content p {
       margin-bottom: 0;
     }
-    /* Botón Ir estilo amarillo-anaranjado */
+
     .btn-ir {
       background: linear-gradient(90deg, var(--amarillo), var(--naranja));
       border: none;
@@ -145,6 +145,26 @@
       margin-top: 40px;
       box-shadow: 0 -2px 8px var(--sombra);
     }
+
+    .support-button {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: linear-gradient(90deg, var(--naranja), var(--amarillo));
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.support-button:hover {
+    background-color: #45a049;
+}
   </style>
 </head>
 <body>
@@ -164,7 +184,7 @@
   <main>
     <h2>Línea del Tiempo del Origen</h2>
     <div class="timeline" id="timeline">
-      <!-- Timeline points will be inserted here by JS -->
+          }
     </div>
   </main>
   <footer>
@@ -175,7 +195,7 @@
   <script>
 
   document.addEventListener('DOMContentLoaded', () => {
-    // Timeline data
+
     const timelineData = [
       { year: 'Origen', title: 'El Origen', desc: 'Leyendas y mitos ancestrales sobre la creación del mundo y la llegada de los primeros pueblos a Colombia.' },
       { year: 'Prehistoria', title: 'Primeros asentamientos', desc: 'Evidencias arqueológicas muestran presencia humana en Colombia hace más de 14,000 años.' },
@@ -202,7 +222,7 @@
       timeline.appendChild(div);
     });
 
-    // Evento click para botones "Ir"
+
     document.querySelectorAll('.btn-ir').forEach((btn) => {
       btn.addEventListener('click', (e) => {
         const index = e.target.getAttribute('data-index');
@@ -213,7 +233,7 @@
 
 
 
-// Evento click para botones "Ir"
+
 document.querySelectorAll('.btn-ir').forEach((btn, idx) => {
   btn.addEventListener('click', () => {
     let tipo = '';
@@ -240,7 +260,7 @@ document.querySelectorAll('.btn-ir').forEach((btn, idx) => {
         tipo = 'derechos7';
         break;
       default:
-        tipo = 'derechos'; // Valor por defecto
+        tipo = 'derechos'; 
         break;
     }
     window.location.href = `OriHisto.html?tipo=${tipo}`;
@@ -248,5 +268,6 @@ document.querySelectorAll('.btn-ir').forEach((btn, idx) => {
 });
 
   </script>
+  <a href="https://github.com/14-Brandon" class="support-button" target="_blank">Apoyar</a>
 </body>
 </html>

@@ -33,13 +33,32 @@
       transform: scale(1.05);
     }
 
-    /* Main ocupa toda la pantalla sin scroll interno */
+
     main {
-  text-align: center; /* centra texto y elementos inline */
-  width: 100%; /* ancho completo */;
-  height: auto; /* alto completo */;
+  text-align: center; 
+  width: 100%; 
+  height: auto; 
 }
 
+.support-button {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: linear-gradient(90deg, var(--naranja), var(--amarillo));
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.support-button:hover {
+    background-color: #45a049; 
+}
   </style>
 </head>
 <body>
@@ -75,6 +94,6 @@
 <footer>
   <p>&copy; 2025 Derechos de los Pueblos Indígenas - Proyecto TIC</p>
 </footer>
-
+<a href="https://github.com/14-Brandon" class="support-button" target="_blank">Apoyar</a>
 </body>
 </html>

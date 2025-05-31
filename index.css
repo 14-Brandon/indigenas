@@ -1,4 +1,3 @@
-/* Paleta: Fiestas Colombia */
 :root {
   --rojo: #D9042B;
   --vino: #730220;
@@ -17,7 +16,7 @@
   font-family: Arial, sans-serif;
 }
 
-/* Body con nueva tipografía */
+
 body {
   background-color: var(--blanco);
   color: var(--azul);
@@ -26,7 +25,7 @@ body {
   padding: 0;
 }
 
-/* Header actualizado */
+
 header {
   background: linear-gradient(90deg, var(--azul), var(--vino));
   padding: 16px 24px;
@@ -49,7 +48,7 @@ header h1 {
   text-shadow: 1px 1px 2px var(--vino);
 }
 
-/* Barra de navegación horizontal actualizada */
+
 .main-nav {
   background-color: var(--naranja);
   padding: 12px 20px;
@@ -81,7 +80,7 @@ header h1 {
   transform: scale(1.1);
 }
 
-/* Barra lateral izquierda (sin cambios en tamaño) */
+
 aside {
   width: 25%;
   background-color: var(--rojo);
@@ -107,7 +106,6 @@ aside p {
   text-align: center;
 }
 
-/* Contenido principal (sin cambios en tamaño) */
 main {
   width: 50%;
   float: left;
@@ -132,7 +130,7 @@ main ul {
   padding-left: 20px;
 }
 
-/* Barra lateral derecha (sin cambios en tamaño) */
+
 #a2 {
   width: 25%;
   float: right;
@@ -149,32 +147,6 @@ main ul {
   display: flex;
   text-align: center;
 }
-
-/* Footer actualizado
-footer {
-  clear: both;
-  background: linear-gradient(90deg, var(--vino), var(--azul));
-  color: var(--blanco);
-  text-align: center;
-  padding: 20px 0 10px 0;
-  margin-top: 40px;
-  box-shadow: 0 -2px 8px var(--sombra);
-} */
-
-/* footer p {
-  font-weight: bold;
-  font-size: 1.2em;
-  margin: 0;
-  text-align: center;
-  text-decoration: none;
-} */
-
-/* footer input {
-  margin-top: 10px;
-  width: 50%;
-  border: none;
-  border-radius: 5px;
-} */
 
 
 footer {
@@ -193,32 +165,50 @@ footer p {
   text-align: center;
 }
 
-/* ------------------------------------ */
-/* Estilos específicos para <p id="p3"> */
-/* ------------------------------------ */
+
 #p3 {
-  /* Hereda el fondo del footer, solo necesitamos ajustar texto */
+
   font-weight: bold;
   font-size: 1.2em;
   margin: 0;
   text-align: center;
-  color: var(--blanco); /* Igual que los demás párrafos del footer */
-  padding: 8px 0;        /* Un poco de espacio vertical */
+  color: var(--blanco); 
+  padding: 8px 0;       
 }
 
-/* El botón dentro de p3 para que parezca texto normal del footer */
+
 #p3 button {
   background: none;
   border: none;
-  color: var(--blanco);           /* Misma tonalidad que el texto del footer */
+  color: var(--blanco);          
   font-weight: bold;
-  font-size: 1.2em;               /* Alineado al tamaño de fuente de footer p */
-  text-decoration: none;          /* Sin subrayado por defecto */
+  font-size: 1.2em;           
+  text-decoration: none;     
   cursor: pointer;
   padding: 0;
   transition: text-decoration 0.2s;
 }
 
 #p3 button:hover {
-  text-decoration: underline;     /* Subraya al pasar el ratón */
+  text-decoration: underline;   
+}
+
+.support-button {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: linear-gradient(90deg, var(--naranja), var(--amarillo));
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.support-button:hover {
+    background-color: #45a049; 
 }

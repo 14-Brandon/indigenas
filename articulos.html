@@ -192,6 +192,25 @@
       }
     }
 
+    .support-button {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: linear-gradient(90deg, var(--naranja), var(--amarillo));
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.support-button:hover {
+    background-color: #45a049; 
+}
   </style>
 </head>
 <body>
@@ -216,7 +235,7 @@
   </div>
 
   <main id="contenidoDerecho">
-    <!-- Aquí se inyectará el contenido dinámico -->
+
     <h2>Cargando contenido...</h2>
   </main>
 
@@ -229,7 +248,7 @@
   </footer>
 
   <script>
-    // Objeto con los derechos y sus artículos
+
     const derechos = {
   derechos1: {
     titulo: "🛡️ 1. Derecho a la Identidad Étnica y Cultural",
@@ -339,13 +358,13 @@
   }
 };
 
-    // Función para obtener el parámetro 'derecho' de la URL
+
     function obtenerParametro(nombre) {
       const urlParams = new URLSearchParams(window.location.search);
       return urlParams.get(nombre);
     }
 
-    // Función para mostrar el contenido basado en el parámetro
+
     function mostrarContenido() {
       const parametro = obtenerParametro('derecho');
       const contenedor = document.getElementById('contenidoDerecho');
@@ -377,6 +396,6 @@
 
     document.addEventListener('DOMContentLoaded', mostrarContenido);
   </script>
-
+<a href="https://github.com/14-Brandon" class="support-button" target="_blank">Apoyar</a>
 </body>
 </html>

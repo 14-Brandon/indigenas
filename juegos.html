@@ -17,7 +17,7 @@
     <ul>
       <li><a href="index.html">Inicio</a></li>
       <li><a href="pindi.html">Pueblos Indígenas</a></li>
-      <li><a href="juegos.html">Origen en Colombia</a></li>
+      <li><a href="origen.html">Origen en Colombia</a></li>
       <li><a href="derechosF.html">Derechos Fundamentales</a></li>
     </ul>
   </nav>
@@ -87,7 +87,7 @@
       <li>El sombrero vueltiao es una prenda tradicional de origen indígena zenú.</li>
     </ul>
     <canvas id="pixelIndigenas" width="220" height="120" style="display:block;margin:20px auto;"></canvas>
-    <!-- <img src="img/indigenas.jpg" alt="Pueblos indígenas"> -->
+      }
     <div id="result" style="display:none;"></div>
   </aside>
 
@@ -96,7 +96,7 @@
     <p>Nombre del CIPA: Las trenzas del calvo</p>
     <p id="p1">Las TIC en Colombia</p>
   </footer>
-
+  <a href="https://github.com/14-Brandon" class="support-button" target="_blank">Apoyar</a>
 </body>
 </html>
 <script>
@@ -114,7 +114,6 @@ document.getElementById('quizForm').addEventListener('submit', function(e) {
     if (width >= 100) {
       clearInterval(interval);
       setTimeout(function() {
-        // Calculate score and mark answers
         var correct = 0;
         for (var i = 1; i <= 5; i++) {
           var radios = document.getElementsByName('q'+i);
@@ -163,7 +162,7 @@ document.getElementById('quizForm').addEventListener('submit', function(e) {
         result.innerHTML = 'Preguntas correctas: <strong>' + correct + '/5</strong><br>¡Sigue aprendiendo y valorando nuestras raíces indígenas!';
         result.style.display = 'block';
         document.getElementById('submitBtn').disabled = false;
-      }, 200); // Small delay to ensure bar is visually full
+      }, 200); 
     }
   }, 30);
 });
@@ -188,8 +187,6 @@ function mostrarRespuestas(respuestasUsuario, respuestasCorrectas) {
   document.getElementById('respuestasScore').innerHTML = `<strong>Respuestas correctas: ${correctas}/${respuestasCorrectas.length}</strong>`;
   document.getElementById('respuestas').style.display = 'block';
 }
-// Llama a mostrarRespuestas() después de calificar, pasando los arrays de respuestas del usuario y correctas.
-
 const canvas = document.getElementById('pixelIndigenas');
 const ctx = canvas.getContext('2d');
 const indigena1 = [
