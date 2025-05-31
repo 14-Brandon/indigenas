@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <title>Historia Completa del Origen</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap');
     :root {
       --rojo: #D9042B;
       --vino: #730220;
@@ -66,15 +67,30 @@
     }
     main {
       max-width: 900px;
-      margin: 40px auto 40px auto;
-      padding: 20px;
-      background: var(--gris-claro);
+      margin: 40px auto;
+      padding: 50px;
+      background: #fdf6e3 url('https://www.transparenttextures.com/patterns/paper-fibers.png');
       border-radius: 16px;
       box-shadow: 0 2px 8px var(--sombra);
       min-height: 600px;
       white-space: pre-wrap;
-      line-height: 1.5em;
-      font-size: 1rem;
+      line-height: 1.6;
+      font-size: 28px;
+      font-family: 'Tangerine', cursive;
+      color: #4b3621;
+    }
+    h2 {
+      text-align: center;
+      font-size: 48px;
+      margin-bottom: 40px;
+      font-family: 'Tangerine', cursive;
+    }
+    p {
+      text-indent: 50px;
+    }
+    a {
+      color: #4b3621;
+      text-decoration: underline;
     }
     footer {
       background: linear-gradient(90deg, var(--vino), var(--azul));
@@ -108,18 +124,21 @@
     <h1>Historia Completa del Origen</h1>
     <img src="img/mapa-de-colombia.png" alt="Mapa de Colombia" />
   </header>
+
   <nav class="main-nav">
     <ul>
       <li><a href="index.html">Inicio</a></li>
       <li><a href="pindi.html">Pueblos Indígenas</a></li>
       <li><a href="derechosF.html">Derechos Fundamentales</a></li>
       <li><a href="juegos.html">Juegos</a></li>
-      <li><a href="origen.html">Origen</a></li>
+      <li><a href="origen.html?info=derechos1">Origen</a></li>
     </ul>
   </nav>
+
   <main id="content">
-    <!-- Aquí se cargará la historia -->
+    <div id="contenido-dinamico"></div>
   </main>
+
   <footer>
     <p>&copy; 2025 - Todos los derechos reservados</p>
     <p>Nombre del CIPA: Las trenzas del calvo</p>
@@ -127,38 +146,152 @@
   </footer>
 
   <script>
-    // Historias largas de entre 130 y 150 renglones (simuladas aquí con texto repetido)
-    const historias = [
-      `El Origen\n\n${"Esta es la historia completa sobre el origen. ".repeat(150)}`,
-      `Prehistoria\n\n${"En la prehistoria, los primeros humanos llegaron a Colombia. ".repeat(140)}`,
-      `Siglo VIII\n\n${"Durante el siglo VIII, se desarrollaron culturas precolombinas como los Muiscas, Taironas, Quimbayas y Zenúes. ".repeat(135)}`,
-      `1499\n\n${"Con la llegada de los españoles en 1499 comenzó la colonización y el mestizaje, afectando profundamente a los pueblos originarios. ".repeat(145)}`,
-      `1810\n\n${"En 1810, los indígenas participaron activamente en la lucha por la independencia de Colombia. ".repeat(138)}`,
-      `1991\n\n${"La Constitución de 1991 reconoció los derechos colectivos y territoriales de los pueblos indígenas, marcando un antes y un después. ".repeat(140)}`,
-      `Actualidad\n\n${"Actualmente, los pueblos indígenas en Colombia mantienen su diversidad cultural, resistencia y aportes a la sociedad. ".repeat(142)}`
-    ];
-
-    // Función para obtener parámetro URL
-    function getQueryParam(param) {
+    function getParametro(nombre) {
       const urlParams = new URLSearchParams(window.location.search);
-      return urlParams.get(param);
+      return urlParams.get(nombre);
     }
 
-    const index = parseInt(getQueryParam('origen'));
-    const content = document.getElementById('content');
+    function mostrarContenido(tipo) {
+      let contenido = '';
+      if (tipo === 'derechos1' || !tipo) {
+        contenido = `<h2>El Origen; Leyendas y mitos ancestrales sobre la creación del mundo y la llegada de los primeros pueblos a Colombia.</h2>Más allá de los mapas y las brújulas, existía un país invisible para quienes caminaban con prisa, pero claro para quienes sabían escuchar los susurros del viento. Ese país se llamaba Aluna, y allí nació el primer pensamiento del mundo. En Aluna, el cielo era una manta tejida por una abuela en la cima de una montaña, con estrellas como nudos de historias y la luna como su bordado favorito.
 
-    if (!isNaN(index) && index >= 0 && index < historias.length) {
-      content.textContent = historias[index];
-      // También agrego un botón para regresar a origen.html
-      const backLink = document.createElement('a');
-      backLink.href = 'origen.html';
-      backLink.textContent = '← Volver a Origen';
-      backLink.className = 'back-button';
-      content.appendChild(document.createElement('br'));
-      content.appendChild(backLink);
-    } else {
-      content.innerHTML = `<p>Historia no encontrada. <a href="origen.html">Volver a Origen</a></p>`;
+        Los primeros seres surgieron del canto de la tierra, nacidos del suspiro de una montaña. No hablaban con palabras, sino con cantos, y aprendían del viento, del agua, del fuego, de las piedras y las hojas. La primera madre y el primer padre enseñaban con ternura y paciencia a vivir en armonía con la naturaleza.
+
+        Cada pueblo nació en un rincón del mundo aún crudo, con su propio lenguaje, color y cultura. El tiempo era un círculo; la muerte, hermana de la vida; la tristeza, una semilla de futuro. Los sabios interpretaban las lenguas de luz del fuego, y los animales eran abuelos disfrazados, sabios con enseñanzas sagradas.
+
+        El mundo se llenó de historias: niños que se volvían jaguares, lágrimas que se convertían en ríos, abuelas que tejían mantas para proteger a todos los pueblos. Los instrumentos, los cantos y los sueños guiaban la vida y despertaban caminos invisibles.
+
+        Dicen que Aluna aún existe, no en libros ni mapas, sino en la memoria de quienes entienden que la tierra es una madre y el árbol un hermano. Si alguna vez oyes al viento llamarte por tu nombre sin voz, es Aluna recordándote tu origen, lleno de colibríes, raíces, jaguares y estrellas.
+        <a href="https://diariodepaz.com/2018/10/10/por-un-pais-al-alcance-de-los-ninos/" target="_blank">(García, 1991)</a></p>`;
+      } else if (tipo === 'derechos2') {
+        contenido = `<h2>Los Primeros Pasos del Hombre en Colombia</h2>
+          <p>
+          Hace más de 14,000 años, mucho antes de que existieran ciudades, lenguas escritas o grandes culturas organizadas, los primeros grupos humanos ya caminaban por lo que hoy conocemos como el territorio colombiano. Estos pueblos vivían en armonía con la naturaleza, moviéndose de un lugar a otro en busca de alimentos, agua y refugio.
+
+          Gracias a las evidencias arqueológicas halladas en sitios como El Abra (Cundinamarca) y Tibitó, los científicos han podido confirmar la presencia de estos antiguos habitantes. Allí se encontraron herramientas de piedra, restos de animales cazados y señales de fogatas, lo que nos muestra que eran nómadas que ya sabían aprovechar su entorno para sobrevivir.
+
+          Estos primeros colombianos no dejaron escritos, pero sus huellas en cuevas, rocas y su forma de vida nos permiten imaginar cómo fue ese comienzo de la humanidad en esta región: cazadores, recolectores y expertos en leer la tierra, el cielo y el tiempo, vivieron miles de años antes de que surgieran las civilizaciones indígenas que conocemos hoy.
+          <a href="https://colombiapais.com/pagina-cultura/cultura-colombia-precolombina-etapas-arqueologicas.html" target="_blank">Colombia País. (s.f.).</a>
+          </p>`;
+      } else if (tipo === 'derechos3') {
+        contenido = `<h2>Siglo VIII: Culturas Precolombinas - Desarrollo de los Muiscas, Taironas, Quimbayas y Zenúes</h2>
+        <p>
+        Durante el siglo VIII, en el territorio que hoy conocemos como Colombia, se desarrollaron diversas culturas indígenas precolombinas que dejaron un legado importante en la historia y la identidad del país. Entre ellas destacan los Muiscas, Taironas, Quimbayas y Zenúes, cada una con características sociales, económicas, políticas y culturales particulares que evidencian el alto grado de desarrollo alcanzado antes de la llegada de los españoles.
+        
+        Los Muiscas, localizados en el altiplano cundiboyacense, fueron una de las culturas más avanzadas y organizadas políticamente. Su sociedad se caracterizaba por una estructura jerárquica con caciques que gobernaban diferentes regiones. Los Muiscas sobresalieron en la agricultura, cultivando maíz, papa, yuca y otros productos, y desarrollaron técnicas de riego y terrazas para maximizar la producción. Además, fueron hábiles en la orfebrería, creando piezas de oro que hoy forman parte del patrimonio cultural colombiano, destacando la famosa figura del “Báculo Muisca” y las elaboraciones que inspiraron la leyenda de El Dorado. También tenían un sistema de trueque basado en productos agrícolas, sal, oro y esmeraldas. En términos religiosos, su cosmovisión estaba ligada a la naturaleza y tenían rituales dedicados al sol, la luna y otros elementos sagrados.
+        
+        Por su parte, los Taironas, asentados en la Sierra Nevada de Santa Marta, desarrollaron una cultura notablemente sofisticada en arquitectura y organización social. Construyeron ciudades fortificadas como Ciudad Perdida, donde se observan complejas terrazas, caminos y plataformas ceremoniales. Su economía giraba en torno a la agricultura, la pesca y la minería de oro, y sus trabajos en orfebrería eran igualmente finos, reflejando una alta capacidad técnica y estética. Los Taironas mantenían una fuerte relación espiritual con su entorno natural y tenían un sistema de creencias politeísta. Su resistencia cultural es destacable, pues sobrevivieron y mantuvieron sus tradiciones incluso ante las primeras presiones coloniales.
+       
+        Los Quimbayas, ubicados en el actual departamento de Quindío y parte del Valle del Cauca, se caracterizaron principalmente por su extraordinaria orfebrería en oro y tumbaga (una aleación de oro y cobre). Sus objetos no solo tenían un valor estético, sino también ritual y social. Los Quimbayas alcanzaron un nivel de especialización técnica avanzado que les permitió elaborar piezas como poporos, figuras antropomorfas y zoomorfas con gran detalle y simbolismo. Socialmente, tenían una organización comunitaria que permitía la producción y distribución de bienes y servicios, y una espiritualidad centrada en el respeto por los ancestros y la naturaleza. La cultura Quimbaya aportó al desarrollo cultural de la región un fuerte sentido de identidad y un legado artístico apreciado mundialmente.
+       
+        Finalmente, los Zenúes, establecidos en la región de la costa Caribe, en los departamentos de Córdoba y Sucre, se destacaron por su sistema hidráulico de canales y diques que les permitió controlar las inundaciones y mejorar la productividad agrícola. Este sistema fue una impresionante ingeniería hidráulica que evidenciaba un profundo conocimiento del medio ambiente y una organización comunitaria eficaz. Además, los Zenúes produjeron cerámicas decoradas con motivos geométricos y zoomorfos, reflejo de su cosmovisión y cultura simbólica. La sociedad Zenú estaba organizada en comunidades con liderazgo colectivo y sistemas de ayuda mutua, manteniendo tradiciones que aún perviven en sus descendientes. Su resistencia y adaptación al medio les permitió prosperar en un entorno retador.
+        
+        Estas cuatro culturas precolombinas evidencian la diversidad cultural, social y económica que existía en Colombia antes de la colonización española. Su desarrollo en el siglo VIII y posteriores marcó un punto importante en la historia nacional, mostrando sociedades complejas, organizadas y con un profundo respeto y conocimiento del medio natural que habitaban. Su legado aún se refleja en las tradiciones, el arte y las cosmovisiones de los pueblos indígenas actuales y en la identidad cultural colombiana en general.
+        
+        <a href="https://enciclopedia.banrepcultural.org/index.php?title=Culturas_ind%C3%ADgenas_de_Colombia" target="_blank">(Banco de la República, Enciclopedia Banrepcultural, 2024)</a>
+        </p>`;
+      } else if (tipo === 'derechos4') {
+        contenido = `<h2>La llegada de los españoles y su impacto en las sociedades indígenas de Colombia</h2>
+                  <p>
+                  La llegada de los españoles al territorio que hoy conocemos como Colombia en 1499 marcó el inicio de un proceso de colonización que transformó radicalmente las sociedades indígenas preexistentes. Este proceso implicó la imposición de nuevas estructuras políticas, económicas y culturales, así como la introducción de enfermedades que diezmaron a la población nativa.
+                
+                  Uno de los impactos más devastadores fue la propagación de enfermedades europeas como la viruela, el sarampión y la gripe, frente a las cuales los pueblos indígenas no tenían inmunidad. Se estima que entre el 50% y el 90% de la población indígena murió debido a estas enfermedades, lo que afectó de manera irreversible a las sociedades americanas <a href="https://es.wikipedia.org/wiki/Cat%C3%A1strofe_demogr%C3%A1fica_en_Am%C3%A9rica_tras_la_llegada_de_los_europeos" target="_blank">(Wikipedia, 2024)</a>.
+
+                  Además de las enfermedades, la violencia directa de los conquistadores también contribuyó a esta devastación demográfica. Durante las guerras de conquista, miles de indígenas fueron asesinados, esclavizados o desplazados de sus tierras. El colapso de las estructuras sociales y la desaparición de gran parte de la población indígena allanaron el camino para el establecimiento de las colonias europeas en América <a href="https://www.donquijote.org/es/cultura-colombiana/historia/colonizacion-de-colombia/" target="_blank">(Don Quijote, s.f.)</a>.
+
+                  La colonización también trajo consigo la imposición de nuevas estructuras políticas y económicas. Los caciques y líderes locales fueron despojados de su poder, y en su lugar, se instauraron gobernadores y virreyes enviados por la Corona española. La organización política y social que había existido durante siglos fue rápidamente desmantelada y reemplazada por un modelo europeo de administración.
+
+                  En cuanto a la economía, los europeos introdujeron nuevas formas de explotación. Las sociedades indígenas, que en muchos casos basaban su economía en la agricultura de subsistencia y el comercio regional, se vieron forzadas a participar en un sistema de producción extractiva impuesto por los colonizadores. El oro, la plata y otros recursos naturales fueron explotados en grandes cantidades y enviados a Europa, dejando a los pueblos indígenas empobrecidos y esclavizados.
+
+                  Uno de los sistemas más abusivos impuestos por los colonizadores fue el de las encomiendas, que permitió a los colonos europeos explotar el trabajo indígena. Bajo este sistema, los conquistadores recibían grandes extensiones de tierra junto con los pueblos indígenas que vivían en ellas, quienes debían trabajar para sus nuevos "dueños". A cambio, los colonos se comprometían a "proteger" y evangelizar a los indígenas, aunque en la práctica, muchos abusaron de su poder <a href="https://es.wikipedia.org/wiki/Encomienda" target="_blank">(Wikipedia, 2024)</a>.
+
+                  El impacto cultural del Descubrimiento de América y la posterior colonización fue igualmente devastador para las civilizaciones indígenas. Los europeos consideraban las religiones indígenas como paganas e inferiores, lo que llevó a la destrucción sistemática de templos, ídolos y lugares sagrados. Los sacerdotes indígenas fueron perseguidos, y muchas ceremonias religiosas fueron prohibidas bajo la amenaza de castigos severos.
+
+                  Además, la imposición del idioma español y las costumbres europeas provocó la desaparición de muchas lenguas indígenas. Aunque algunas lenguas nativas lograron sobrevivir, muchas otras se perdieron para siempre debido a la falta de transmisión generacional. La aculturación forzosa fue una herramienta clave en la estrategia colonial, que buscaba erradicar cualquier rastro de las antiguas civilizaciones y reemplazarlo por una cultura dominada por los valores europeos.
+
+                  Este proceso también dio lugar al mestizaje, resultado de las relaciones entre europeos, indígenas y africanos. Aparecieron nuevas etnias: los mestizos fueron creados por matrimonios entre europeos e indios; los mulatos eran descendientes de blancos y africanos. De igual manera, la religión reflejó el hecho de que las religiones tradicionales indias adaptaron y adoptaron elementos del catolicismo.
+
+                  En resumen, la llegada de los españoles en 1499 tuvo un impacto profundo y duradero en los pueblos originarios de Colombia, transformando sus estructuras sociales, económicas y culturales, y dejando una huella que perdura hasta nuestros días.
+                  </p>`;
+      } else if (tipo === 'derechos5') {
+        contenido = `<h2>La participación indígena en la independencia de Colombia</h2><p>
+        La llegada de los españoles al territorio que hoy conocemos como Colombia en 1499 marcó el inicio de un proceso de colonización que transformó radicalmente las sociedades indígenas preexistentes. Este proceso implicó la imposición de nuevas estructuras políticas, económicas y culturales, así como la introducción de enfermedades que diezmaron a la población nativa.
+
+        Uno de los impactos más devastadores fue la propagación de enfermedades europeas como la viruela, el sarampión y la gripe, frente a las cuales los pueblos indígenas no tenían inmunidad. Se estima que entre el 50% y el 90% de la población indígena murió debido a estas enfermedades, lo que afectó de manera irreversible a las sociedades americanas.
+    
+        Además de las enfermedades, la violencia directa de los conquistadores también contribuyó a esta devastación demográfica. Durante las guerras de conquista, miles de indígenas fueron asesinados, esclavizados o desplazados de sus tierras. El colapso de las estructuras sociales y la desaparición de gran parte de la población indígena allanaron el camino para el establecimiento de las colonias europeas en América.
+
+        La colonización también trajo consigo la imposición de nuevas estructuras políticas y económicas. Los caciques y líderes locales fueron despojados de su poder, y en su lugar, se instauraron gobernadores y virreyes enviados por la Corona española. La organización política y social que había existido durante siglos fue rápidamente desmantelada y reemplazada por un modelo europeo de administración.
+
+        En cuanto a la economía, los europeos introdujeron nuevas formas de explotación. Las sociedades indígenas, que en muchos casos basaban su economía en la agricultura de subsistencia y el comercio regional, se vieron forzadas a participar en un sistema de producción extractiva impuesto por los colonizadores. El oro, la plata y otros recursos naturales fueron explotados en grandes cantidades y enviados a Europa, dejando a los pueblos indígenas empobrecidos y esclavizados.
+
+        Uno de los sistemas más abusivos impuestos por los colonizadores fue el de las encomiendas, que permitió a los colonos europeos explotar el trabajo indígena. Bajo este sistema, los conquistadores recibían grandes extensiones de tierra junto con los pueblos indígenas que vivían en ellas, quienes debían trabajar para sus nuevos "dueños". A cambio, los colonos se comprometían a "proteger" y evangelizar a los indígenas, aunque en la práctica, muchos abusaron de su poder.
+
+        El impacto cultural del Descubrimiento de América y la posterior colonización fue igualmente devastador para las civilizaciones indígenas. Los europeos consideraban las religiones indígenas como paganas e inferiores, lo que llevó a la destrucción sistemática de templos, ídolos y lugares sagrados. Los sacerdotes indígenas fueron perseguidos, y muchas ceremonias religiosas fueron prohibidas bajo la amenaza de castigos severos.
+
+        Además, la imposición del idioma español y las costumbres europeas provocó la desaparición de muchas lenguas indígenas. Aunque algunas lenguas nativas lograron sobrevivir, muchas otras se perdieron para siempre debido a la falta de transmisión generacional. La aculturación forzosa fue una herramienta clave en la estrategia colonial, que buscaba erradicar cualquier rastro de las antiguas civilizaciones y reemplazarlo por una cultura dominada por los valores europeos.
+
+        Este proceso también dio lugar al mestizaje, resultado de las relaciones entre europeos, indígenas y africanos. Aparecieron nuevas etnias: los mestizos fueron creados por matrimonios entre europeos e indios; los mulatos eran descendientes de blancos y africanos. De igual manera, la religión reflejó el hecho de que las religiones tradicionales indias adaptaron y adoptaron elementos del catolicismo.
+
+        En resumen, la llegada de los españoles en 1499 tuvo un impacto profundo y duradero en los pueblos originarios de Colombia, transformando sus estructuras sociales, económicas y culturales, y dejando una huella que perdura hasta nuestros días.
+      </p>`;
+      } else if (tipo === 'derechos6') {
+        contenido = `<h2>Reconocimiento de los derechos indígenas en la Constitución de 1991</h2><p>La promulgación de la Constitución Política de Colombia de 1991 significó un cambio fundamental en la relación entre el Estado y los pueblos indígenas. Luego de años de exclusión, esta nueva Constitución reconoció oficialmente sus derechos colectivos, culturales y territoriales, sentando las bases para una Colombia pluriétnica y multicultural. 
+  <a href="https://es.wikipedia.org/wiki/Constituci%C3%B3n_de_Colombia_de_1991" target="_blank">[Wikipedia]</a>
+
+  Uno de los avances más destacados fue el reconocimiento de la diversidad étnica y cultural de la nación. El artículo 7 consagra que "el Estado reconoce y protege la diversidad étnica y cultural de la Nación colombiana", lo que marcó un quiebre con constituciones anteriores que privilegiaban una identidad homogénea. 
+  <a href="https://es.wikipedia.org/wiki/Constituci%C3%B3n_de_Colombia_de_1991" target="_blank">[Wikipedia]</a>
+
+  En cuanto a los derechos territoriales, los artículos 329 y 330 garantizan la propiedad colectiva de los resguardos indígenas y les otorgan autonomía para administrarse conforme a sus costumbres y tradiciones. Este reconocimiento permite que las comunidades puedan proteger sus territorios ancestrales y ejercer autogobierno. 
+  <a href="https://corteidh.or.cr/" target="_blank">[CorteIDH]</a> <a href="https://c.bcn.cl/" target="_blank">[c.bcn.cl]</a> <a href="https://elpais.com/" target="_blank">[El País]</a>
+
+  Otro aspecto clave fue la jurisdicción especial indígena. Según el artículo 246, las autoridades indígenas pueden ejercer funciones jurisdiccionales dentro de su territorio, de acuerdo con sus normas y procedimientos, siempre y cuando no sean contrarios a la Constitución. Esto dio validez a sus sistemas jurídicos tradicionales. 
+  <a href="https://igualdad.cepal.org/" target="_blank">[igualdad.cepal.org]</a> <a href="https://corteidh.or.cr/" target="_blank">[CorteIDH]</a> <a href="https://pdba.georgetown.edu/" target="_blank">[pdba.georgetown.edu]</a>
+
+  En el ámbito político, el artículo 171 establece una circunscripción especial para que las comunidades indígenas tengan representación en el Congreso, asegurando su participación activa en las decisiones legislativas del país. 
+  <a href="https://igualdad.cepal.org/" target="_blank">[igualdad.cepal.org]</a>
+
+  En materia lingüística y educativa, el artículo 10 reconoce que las lenguas indígenas son oficiales en sus territorios, y el artículo 68 garantiza una educación respetuosa de su identidad cultural, lo cual refuerza la conservación de sus saberes ancestrales. 
+  <a href="https://es.wikipedia.org/wiki/Constituci%C3%B3n_de_Colombia_de_1991" target="_blank">[Wikipedia]</a>
+
+  Complementando el marco constitucional, Colombia ratificó en 1991 el Convenio 169 de la OIT mediante la Ley 21, en el cual se reconocen los derechos de los pueblos indígenas a conservar sus culturas, formas de vida y a participar en decisiones que los afecten directamente. 
+  <a href="https://www.anla.gov.co/" target="_blank">[ANLA]</a> <a href="https://c.bcn.cl/" target="_blank">[c.bcn.cl]</a>
+
+  No obstante los avances legales, las comunidades indígenas siguen enfrentando retos como la minería ilegal, la deforestación, la violencia y el escaso apoyo estatal, lo que limita la plena implementación de sus derechos y autonomía. 
+
+  En conclusión, la Constitución de 1991 representó un punto de inflexión en la protección de los pueblos indígenas en Colombia. Sin embargo, es necesario fortalecer el compromiso estatal y social para garantizar que estos derechos se traduzcan en realidades tangibles. </p>`;
+      } else if (tipo === 'derechos7') {
+        contenido = `<h2>Actualidad: Presente - Diversidad, Resistencia y Aportes de los Pueblos Indígenas en la Colombia Contemporánea</h2><p>
+  En la Colombia contemporánea, los pueblos indígenas constituyen un componente fundamental de la diversidad cultural y social del país. A pesar de los numerosos desafíos que enfrentan, estos pueblos mantienen viva su identidad, tradiciones y formas propias de organización, siendo un símbolo de resistencia y resiliencia frente a las dinámicas sociales, políticas y económicas que han marcado la historia nacional.
+  <a href="https://www.un.org/es/observances/indigenous-day" target="_blank">[ONU: Día Internacional de los Pueblos Indígenas]</a>
+  La diversidad étnica de Colombia es notable. Existen más de 100 pueblos indígenas reconocidos oficialmente, con alrededor de un millón y medio de personas identificadas como indígenas, lo que representa aproximadamente el 3.4% de la población nacional. Cada pueblo tiene su propia lengua, cosmovisión, organización social y formas culturales que enriquecen el mosaico cultural colombiano. Esta diversidad es reflejo de una pluralidad histórica que se resiste a desaparecer frente a las presiones de la globalización, la homogeneización cultural y las políticas estatales centralizadas.
+  <a href="https://www.dane.gov.co/index.php/estadisticas-por-tema/poblacion-y-demografia/poblacion-indigena" target="_blank">[DANE]</a>
+  Uno de los principales aspectos que caracterizan la actualidad indígena es la resistencia cultural. A través de la defensa de sus territorios ancestrales, el rescate de sus lenguas originarias, y la revitalización de sus prácticas ancestrales en la educación, la medicina tradicional y la espiritualidad, los pueblos indígenas se han convertido en guardianes de un legado milenario. Esta resistencia no es solo cultural sino también política y social, manifestándose en la defensa de sus derechos colectivos frente a amenazas como la minería ilegal, el desplazamiento forzado y los conflictos armados.
+  <a href="https://www.onic.org.co/" target="_blank">[ONIC]</a> <a href="https://www.amnesty.org/es/latest/news/2021/09/colombia-indigenous-rights/" target="_blank">[Amnistía Internacional]</a>
+  La Constitución de 1991 marcó un antes y un después en el reconocimiento formal de los derechos de los pueblos indígenas en Colombia, otorgándoles autonomía, reconocimiento territorial y participación política. Sin embargo, en la práctica, las comunidades indígenas enfrentan obstáculos significativos para la implementación plena de estos derechos. En muchas regiones, los indígenas continúan siendo víctimas de la violencia, la exclusión social y la pobreza estructural, condiciones que afectan directamente su calidad de vida y el desarrollo integral de sus comunidades.
+  <a href="https://www.constitucioncolombia.com/titulo-1/capitulo-1/articulo-7" target="_blank">[Constitución Política de Colombia]</a> <a href="https://www.elespectador.com/colombia2020/paz-y-derechos-humanos/las-comunidades-indigenas-en-colombia-en-el-contexto-de-paz/" target="_blank">[El Espectador]</a>
+  En este contexto, los movimientos indígenas han desarrollado una agenda política y social fuerte que busca no solo la reivindicación de sus derechos, sino también la transformación de las relaciones con el Estado y la sociedad colombiana. Organizaciones como la Asociación de Cabildos Indígenas del Norte del Cauca (ACIN), el Consejo Regional Indígena del Cauca (CRIC), y la Organización Nacional Indígena de Colombia (ONIC), entre otras, han sido protagonistas en procesos de movilización social, defensa territorial y diálogos con el gobierno.
+  <a href="https://www.acin.org.co/" target="_blank">[ACIN]</a> <a href="https://www.cric-colombia.org/" target="_blank">[CRIC]</a> <a href="https://www.onic.org.co/" target="_blank">[ONIC]</a>
+  Además de la resistencia, los pueblos indígenas aportan significativamente a la sociedad colombiana en diversos ámbitos. En la protección ambiental, por ejemplo, las comunidades indígenas gestionan más del 30% del territorio nacional, incluyendo ecosistemas estratégicos como la Amazonía y la Sierra Nevada de Santa Marta. Su conocimiento tradicional y prácticas sustentables son clave para la conservación de la biodiversidad y la lucha contra el cambio climático. Estos aportes son cada vez más reconocidos a nivel nacional e internacional como modelos de desarrollo sostenible.
+  <a href="https://www.unep.org/es" target="_blank">[Programa de las Naciones Unidas para el Medio Ambiente]</a> <a href="https://www.nationalgeographic.com.es/naturaleza/que-son-pueblos-indigenas_14328" target="_blank">[National Geographic]</a>
+  En el campo cultural, los indígenas contribuyen a la riqueza artística y cultural de Colombia con sus artesanías, música, danza, ceremonias y expresiones lingüísticas. Sus festividades y rituales son una manifestación viva de su identidad y un puente para el diálogo intercultural, que enriquece la pluralidad cultural del país. La revitalización de las lenguas originarias es un esfuerzo permanente que se refleja en la educación bilingüe intercultural, un derecho reconocido en la Constitución que busca preservar estas expresiones lingüísticas frente a su riesgo de desaparición.
+  <a href="https://unesdoc.unesco.org/ark:/48223/pf0000265671_spa" target="_blank">[UNESCO]</a> <a href="https://www.mineducacion.gov.co/" target="_blank">[Ministerio de Educación Colombia]</a>
+  En el ámbito político, la representación indígena en espacios de decisión ha aumentado, con curules especiales en el Congreso de la República que permiten llevar sus demandas y perspectivas a la política nacional. Sin embargo, la inclusión política aún enfrenta retos, como la violencia política contra líderes indígenas y la necesidad de fortalecer mecanismos de participación efectiva.
+  <a href="https://www.congresovisible.org/curules-especiales-indigenas/" target="_blank">[Congreso Visible]</a> <a href="https://www.eltiempo.com/justicia/servicios/la-violencia-politica-contra-los-lideres-indigenas-en-colombia-652465" target="_blank">[El Tiempo]</a>
+  Es importante destacar también el papel de la mujer indígena, quien ha emergido como una líder fundamental en la defensa de los derechos colectivos y en la construcción de paz. Las mujeres indígenas lideran procesos comunitarios, protegen saberes ancestrales y luchan contra las múltiples formas de discriminación que enfrentan, tanto por su condición étnica como por su género.
+  <a href="https://www.unwomen.org/es/news/stories/2021/10/feature-indigenous-women-leaders" target="_blank">[ONU Mujeres]</a> <a href="https://cimacnoticias.com.mx/2019/05/09/mujeres-indigenas-el-corazon-de-la-lucha-por-los-derechos-humanos" target="_blank">[Cimac Noticias]</a>
+  Finalmente, el presente de los pueblos indígenas en Colombia es una historia de lucha constante por la dignidad, el reconocimiento y la justicia social. Su presencia y aportes son un pilar esencial para la construcción de una Colombia más justa, diversa y respetuosa de los derechos humanos y la naturaleza. La sociedad colombiana tiene el desafío y la responsabilidad de escuchar, reconocer y apoyar estos procesos para avanzar hacia un país donde la diversidad cultural sea valorada y protegida como un patrimonio común.
+  <a href="https://www.elespectador.com/opinion/columnistas/derechos-indigenas-un-reto-para-colombia/" target="_blank">[El Espectador]</a>
+</p>`;
+      } else {
+        contenido = `<h2>No hay contenido disponible</h2><p>El tipo "${tipo}" no está definido.</p>`;
+      }
+      document.getElementById('contenido-dinamico').innerHTML = contenido;
     }
+
+    const info = getParametro('info');
+    mostrarContenido(info);
   </script>
 </body>
 </html>

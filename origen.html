@@ -173,6 +173,8 @@
     <p>Las TIC en Colombia</p>
   </footer>
   <script>
+
+  document.addEventListener('DOMContentLoaded', () => {
     // Timeline data
     const timelineData = [
       { year: 'Origen', title: 'El Origen', desc: 'Leyendas y mitos ancestrales sobre la creación del mundo y la llegada de los primeros pueblos a Colombia.' },
@@ -183,7 +185,9 @@
       { year: '1991', title: 'Nueva Constitución', desc: 'Reconocimiento de los derechos colectivos y territoriales de los pueblos indígenas.' },
       { year: 'Actualidad', title: 'Presente', desc: 'Diversidad, resistencia y aportes de los pueblos indígenas en la Colombia contemporánea.' }
     ];
+
     const timeline = document.getElementById('timeline');
+
     timelineData.forEach((point, idx) => {
       const div = document.createElement('div');
       div.className = 'timeline-point';
@@ -199,12 +203,50 @@
     });
 
     // Evento click para botones "Ir"
-    document.querySelectorAll('.btn-ir').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const index = btn.getAttribute('data-index');
-        window.location.href = `OriHisto.html?id=${index}`;
+    document.querySelectorAll('.btn-ir').forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        const index = e.target.getAttribute('data-index');
+        window.location.href = `OriHisto.html?info=derechos${index}`;
       });
     });
+  });
+
+
+
+// Evento click para botones "Ir"
+document.querySelectorAll('.btn-ir').forEach((btn, idx) => {
+  btn.addEventListener('click', () => {
+    let tipo = '';
+    switch (idx) {
+      case 0:
+        tipo = 'derechos1';
+        break;
+      case 1:
+        tipo = 'derechos2';
+        break;
+      case 2:
+        tipo = 'derechos3';
+        break;
+      case 3:
+        tipo = 'derechos4';
+        break;
+      case 4:
+        tipo = 'derechos5';
+        break;
+      case 5:
+        tipo = 'derechos6';
+        break;
+      case 6:
+        tipo = 'derechos7';
+        break;
+      default:
+        tipo = 'derechos'; // Valor por defecto
+        break;
+    }
+    window.location.href = `OriHisto.html?tipo=${tipo}`;
+  });
+});
+
   </script>
 </body>
 </html>
