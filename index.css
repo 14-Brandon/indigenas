@@ -1,0 +1,168 @@
+/* Paleta: Fiestas Colombia */
+:root {
+    --rojo: #D9042B;
+    --vino: #730220;
+    --azul: #023373;
+    --amarillo: #F2B807;
+    --naranja: #D97904;
+  }
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  body {
+    background-color: #fff;
+    color: var(--azul);
+  }
+  
+  /* Header */
+  header {
+    background-color: var(--azul);
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  header img {
+    height: 60px;
+    width: auto;
+  }
+  
+  header h1 {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 2em;
+    color: #fff;
+  }
+  
+  /* Barra de navegación horizontal */
+  .main-nav {
+    max-width: 100%;
+    margin: 0 auto;
+    background-color: var(--naranja);
+    padding: 10px 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  .main-nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  .main-nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    padding: 8px 12px;
+    transition: background 0.3s;
+  }
+  
+  .main-nav ul li a:hover {
+    background-color: var(--vino);
+    border-radius: 5px;
+  }
+  
+  /* Barra lateral (aside) */
+  aside {
+    width: 25%;
+    background-color: var(--rojo);
+    color: white;
+    padding: 20px;
+    float: left;
+    height: calc(100vh - 160px);
+  }
+  
+  aside h2 {
+    margin-bottom: 10px;
+  }
+  
+  aside p {
+    line-height: 1.5;
+  }
+
+  #i1 {
+    width: 100%;
+    padding-top: 20px;
+    height: calc(50vh - 70px);
+    display: flex;
+    text-align: center;
+  }
+  
+  /* Contenido principal */
+  main {
+    width: 50%;
+    float: left;
+    padding: 20px;
+    background-color: #f9f9f9;
+    height: calc(100vh - 160px);
+    overflow-y: auto;
+  }
+  
+  main h2 {
+    color: var(--azul);
+    margin-bottom: 10px;
+  }
+  
+  main p,
+  main ul {
+    line-height: 1.6;
+    margin-bottom: 10px;
+  }
+  
+  main ul {
+    padding-left: 20px;
+  }
+  
+    /* Barra lateral (aside) */
+    #a2 {
+        width: 25%;
+        float: right;
+      }
+
+      #wayuin {
+        background-color: var(--rojo);
+        width: 100%;
+        height: calc(70vh - 70px);
+        display: flex;
+        text-align: center;
+      }
+  
+
+/* Footer */
+footer {
+    clear: both;
+    background-color: var(--amarillo);
+    color: var(--vino);
+    padding: 18.7px;
+    height: calc(8vh - 20px);
+    display: flex;
+    justify-content: center; /* Centra los elementos horizontalmente */
+    align-items: center;     /* Centra los elementos verticalmente */
+    gap: 30px;               /* Espacio entre los párrafos */
+  }
+  
+  footer p {
+    font-weight: bold;        /* Texto en negrita */
+    font-size: 1.2em;         /* Fuente más grande */
+    margin: 0;                /* Eliminar márgenes adicionales */
+    text-align: center;       /* Alinear el texto al centro */
+    text-decoration: none;    /* Eliminar subrayado de los textos */
+  }
+  
+  footer input {
+    margin-top: 10px;
+    width: 50%;
+    border: none;
+    border-radius: 5px;
+  }
+  
