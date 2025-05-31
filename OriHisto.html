@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Historia Completa del Origen</title>
+  <style>
+    :root {
+      --rojo: #D9042B;
+      --vino: #730220;
+      --azul: #023373;
+      --amarillo: #F2B807;
+      --naranja: #D97904;
+      --blanco: #fff;
+      --gris-claro: #f2f2f2;
+      --sombra: rgba(0, 0, 0, 0.15);
+    }
+    body {
+      background-color: var(--blanco);
+      color: var(--azul);
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: linear-gradient(90deg, var(--azul), var(--vino));
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 4px 12px var(--sombra);
+    }
+    header img {
+      height: 60px;
+    }
+    header h1 {
+      flex-grow: 1;
+      text-align: center;
+      font-size: 2.2em;
+      color: var(--blanco);
+      text-shadow: 1px 1px 2px var(--vino);
+    }
+    .main-nav {
+      background-color: var(--naranja);
+      padding: 12px 20px;
+      box-shadow: 0 4px 8px var(--sombra);
+    }
+    .main-nav ul {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .main-nav ul li a {
+      text-decoration: none;
+      color: var(--blanco);
+      font-weight: bold;
+      padding: 10px 16px;
+      border-radius: 8px;
+      transition: background 0.3s, transform 0.2s;
+    }
+    .main-nav ul li a:hover {
+      background-color: var(--vino);
+      transform: scale(1.1);
+    }
+    main {
+      max-width: 900px;
+      margin: 40px auto 40px auto;
+      padding: 20px;
+      background: var(--gris-claro);
+      border-radius: 16px;
+      box-shadow: 0 2px 8px var(--sombra);
+      min-height: 600px;
+      white-space: pre-wrap;
+      line-height: 1.5em;
+      font-size: 1rem;
+    }
+    footer {
+      background: linear-gradient(90deg, var(--vino), var(--azul));
+      color: var(--blanco);
+      text-align: center;
+      padding: 20px 0 10px 0;
+      margin-top: 40px;
+      box-shadow: 0 -2px 8px var(--sombra);
+    }
+    .back-button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 18px;
+      background-color: var(--rojo);
+      color: var(--blanco);
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s ease;
+      text-decoration: none;
+    }
+    .back-button:hover {
+      background-color: var(--vino);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="img/min_tic.png" alt="Logo de las TIC" />
+    <h1>Historia Completa del Origen</h1>
+    <img src="img/mapa-de-colombia.png" alt="Mapa de Colombia" />
+  </header>
+  <nav class="main-nav">
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="pindi.html">Pueblos Indígenas</a></li>
+      <li><a href="derechosF.html">Derechos Fundamentales</a></li>
+      <li><a href="juegos.html">Juegos</a></li>
+      <li><a href="origen.html">Origen</a></li>
+    </ul>
+  </nav>
+  <main id="content">
+    <!-- Aquí se cargará la historia -->
+  </main>
+  <footer>
+    <p>&copy; 2025 - Todos los derechos reservados</p>
+    <p>Nombre del CIPA: Las trenzas del calvo</p>
+    <p>Las TIC en Colombia</p>
+  </footer>
+
+  <script>
+    // Historias largas de entre 130 y 150 renglones (simuladas aquí con texto repetido)
+    const historias = [
+      `El Origen\n\n${"Esta es la historia completa sobre el origen. ".repeat(150)}`,
+      `Prehistoria\n\n${"En la prehistoria, los primeros humanos llegaron a Colombia. ".repeat(140)}`,
+      `Siglo VIII\n\n${"Durante el siglo VIII, se desarrollaron culturas precolombinas como los Muiscas, Taironas, Quimbayas y Zenúes. ".repeat(135)}`,
+      `1499\n\n${"Con la llegada de los españoles en 1499 comenzó la colonización y el mestizaje, afectando profundamente a los pueblos originarios. ".repeat(145)}`,
+      `1810\n\n${"En 1810, los indígenas participaron activamente en la lucha por la independencia de Colombia. ".repeat(138)}`,
+      `1991\n\n${"La Constitución de 1991 reconoció los derechos colectivos y territoriales de los pueblos indígenas, marcando un antes y un después. ".repeat(140)}`,
+      `Actualidad\n\n${"Actualmente, los pueblos indígenas en Colombia mantienen su diversidad cultural, resistencia y aportes a la sociedad. ".repeat(142)}`
+    ];
+
+    // Función para obtener parámetro URL
+    function getQueryParam(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
+    }
+
+    const index = parseInt(getQueryParam('origen'));
+    const content = document.getElementById('content');
+
+    if (!isNaN(index) && index >= 0 && index < historias.length) {
+      content.textContent = historias[index];
+      // También agrego un botón para regresar a origen.html
+      const backLink = document.createElement('a');
+      backLink.href = 'origen.html';
+      backLink.textContent = '← Volver a Origen';
+      backLink.className = 'back-button';
+      content.appendChild(document.createElement('br'));
+      content.appendChild(backLink);
+    } else {
+      content.innerHTML = `<p>Historia no encontrada. <a href="origen.html">Volver a Origen</a></p>`;
+    }
+  </script>
+</body>
+</html>
